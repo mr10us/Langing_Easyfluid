@@ -37,6 +37,7 @@ export const HeroSection = () => {
                 width="335"
                 height="530"
                 priority
+                fetchPriority="low"
                 alt="easufluid app icon"
               />
             </div>

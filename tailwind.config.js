@@ -8,9 +8,20 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "hero-gradient":
+          "linear-gradient(90deg, rgba(12,46,83,1) 0%, rgba(72,102,153,1) 100%)",
+      },
+      colors: {
+        blue: {
+          DEFAULT: "#116ACC",
+          light: "#116ACC",
+          dark: "#116ACC",
+        },
+        red: {
+          DEFAULT: "#FD4E5D",
+          light: "#FD4E5D",
+          dark: "#FD4E5D",
+        },
       },
     },
   },

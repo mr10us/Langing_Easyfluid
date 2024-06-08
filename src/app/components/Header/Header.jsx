@@ -29,7 +29,7 @@ export const Header = () => {
       <MainWrapper className="flex items-center h-full">
         <div className="flex justify-between items-center w-full">
           <Link href="#">
-            <Image src="/logo.svg" width={33} height={70} alt="logo" style={{height: "auto"}}/>
+            <Image src="/logo.svg" width={33} height={70} alt="logo" priority style={{height: "auto"}}/>
           </Link>
           <nav className="flex gap-4 items-center">
             {links.map(({ label, path }) => (

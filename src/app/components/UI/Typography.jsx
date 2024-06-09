@@ -20,8 +20,8 @@ Typography.H2Bold = ({ children, style, className }) => {
   );
 };
 Typography.H2Medium = ({ children, style, className }) => {
-  const defaultStyles = " text-4xl font-medium text-gray-100";
-  const styles = className ? className + defaultStyles : defaultStyles;
+  const defaultStyles = "text-4xl font-medium text-gray-100 ";
+  const styles = className ? defaultStyles + className : defaultStyles;
 
   return (
     <h2 style={style} className={styles}>

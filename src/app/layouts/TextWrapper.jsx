@@ -1,5 +1,7 @@
-export const TextWrapper = ({children}) => {
+export const TextWrapper = ({children, style, className}) => {
+  const defaultStyles = " max-w-[900px] mx-auto";
+  const styles = className ? className + defaultStyles : defaultStyles;
   return (
-    <div className="max-w-[900px] mx-auto">{children}</div>
+    <div className={styles} style={style}>{children}</div>
   )
 }

@@ -31,3 +31,11 @@ body {
     text-wrap: balance;
   }
 }
+
+.group:hover .card:not(:hover) {
+  @apply opacity-50;
+}
+
+.link:hover > span {
+  transform: translateX(10px);
+}

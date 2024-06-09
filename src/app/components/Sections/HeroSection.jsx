@@ -6,47 +6,27 @@ import { MainWrapper } from "../../layouts/MainWrapper";
 import { SectionLayout } from "../../layouts/SectionLayout";
 import { BlueButton } from "../UI/Buttons/BlueButton";
 import { TransparentButton } from "../UI/Buttons/TransparentButton";
-import { motion, useTransform, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
+import {
+  fadeIn,
+  slideInX,
+  slideInY,
+  staggerContainer,
+} from "@/app/animations/HeroSection";
+import useScrollAnimations from "@/app/hooks/useScrollAnimations";
 
 export const HeroSection = () => {
-  const { scrollY } = useScroll();
-
-  const widgetY = useTransform(scrollY, [0, 800], [0, -250]);
-  const widgetX = useTransform(scrollY, [0, 800], [0, 80]);
-
-  const phoneX = useTransform(scrollY, [0, 800], [0, 100]);
-
-  const manOneY = useTransform(scrollY, [0, 800], [0, -400]);
-  const manTwoY = useTransform(scrollY, [0, 800], [0, -320]);
-  const manThreeY = useTransform(scrollY, [0, 800], [0, -100]);
-
-  const manOneX = useTransform(scrollY, [0, 800], [0, 220]);
-  const manTwoX = useTransform(scrollY, [0, 800], [0, 180]);
-  const manThreeX = useTransform(scrollY, [0, 800], [0, 200]);
-
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const fadeIn = {
-    hidden: { opacity: 0, scale: 0 },
-    show: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
-  };
-
-  const slideInY = {
-    hidden: { y: 100 },
-    show: { y: 0, transition: { type: "spring", duration: 1.2 } },
-  };
-  const slideInX = {
-    hidden: { x: 100 },
-    show: { x: 0, transition: { type: "spring", duration: 1 } },
-  };
+  const {
+    widgetY,
+    widgetX,
+    phoneX,
+    manOneY,
+    manTwoY,
+    manThreeY,
+    manOneX,
+    manTwoX,
+    manThreeX,
+  } = useScrollAnimations();
 
   return (
     <SectionLayout
@@ -79,7 +59,7 @@ export const HeroSection = () => {
             variants={staggerContainer}
           >
             <motion.div
-              className="absolute -top-[120px] -right-4"
+              className={`absolute -top-[120px] -right-4`}
               style={{ x: phoneX, willChange: "transform", zIndex: 10 }}
               variants={slideInY}
               initial="hidden"

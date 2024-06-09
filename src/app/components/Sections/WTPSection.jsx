@@ -5,7 +5,29 @@ import { Card } from "../UI/Card";
 import ArrowsIcon from "../../../../public/arrows.svg";
 import PasscodeLock from "../../../../public/passcode-lock.svg";
 import HeartHandshake from "../../../../public/heart-handshake.svg";
-import Image from "next/image";
+
+const cards = [
+  {
+    icon: <ArrowsIcon />,
+    iconColor: "#116ACC",
+    title: "To provide",
+    content:
+      "customers with complete control of what’s going on with your fluids",
+  },
+  {
+    icon: <PasscodeLock />,
+    iconColor: "#67D744",
+    title: "Reduce spendings",
+    content: "on fluids",
+  },
+  {
+    icon: <HeartHandshake />,
+    iconColor: "#51BBF6",
+    title: "Reduce risks",
+    content:
+      "related to going outside recommended targets (read - bacterial growth, corrosion, skin allergy etc.)",
+  },
+];
 
 export const WTPSection = () => {
   return (
@@ -13,6 +35,7 @@ export const WTPSection = () => {
       style={{
         backgroundImage: "url(/WTP-bg.svg)",
         backgroundRepeat: "no-repeat",
+        backgroundColor: "#F8F8F8",
       }}
       className="max-h-[470px] h-[470px]"
     >
@@ -22,71 +45,37 @@ export const WTPSection = () => {
           <Typography.P18>The goal of the service is:</Typography.P18>
         </div>
         <div
-          className="flex justify-between gap-5 items-center"
+          className="flex items-center justify-center"
           style={{ height: "calc(100% - 152px)" }}
         >
-          <Card
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              gap: 15,
-              height: "70%",
-              flexBasis: "33.333%",
-            }}
-          >
-            <div className="bg-blue w-fit p-3 rounded-lg">
-              <ArrowsIcon />
-            </div>
-            <Typography.H3Medium style={{ color: "#424242" }}>
-              To provide
-            </Typography.H3Medium>
-            <Typography className="font-light" style={{ color: "#424242" }}>
-              customers with complete control of what’s going on with your
-              fluids
-            </Typography>
-          </Card>
-          <Card
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              gap: 15,
-              height: "70%",
-              flexBasis: "33.333%",
-            }}
-          >
-            <div className="bg-[#67D744] w-fit p-3 rounded-lg">
-              <PasscodeLock />
-            </div>
-            <Typography.H3Medium style={{ color: "#424242" }}>
-              Reduce spendings
-            </Typography.H3Medium>
-            <Typography className="font-light" style={{ color: "#424242" }}>
-              on fluids
-            </Typography>
-          </Card>
-          <Card
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              gap: 15,
-              height: "70%",
-              flexBasis: "33.333%",
-            }}
-          >
-            <div className="bg-[#51BBF6] w-fit p-3 rounded-lg">
-              <HeartHandshake />
-            </div>
-            <Typography.H3Medium style={{ color: "#424242" }}>
-              Reduce risks
-            </Typography.H3Medium>
-            <Typography className="font-light" style={{ color: "#424242" }}>
-              related to going outside recommended targets (read - bacterial
-              growth, corrosion, skin allergy etc.){" "}
-            </Typography>
-          </Card>
+          <div className="group flex gap-5 justify-between h-3/4">
+            {cards.map((card) => (
+              <Card
+                className="card transition-opacity duration-500"
+                style={{
+                  display: "grid",
+                  gridTemplateRows: "repeat(3, 1fr)",
+                  gap: 15,
+                  width: "calc((100% - 40px) / 3)",
+                }}
+                key={card.title}
+                showAnim
+              >
+                <div
+                  className="w-fit p-3 rounded-lg"
+                  style={{ backgroundColor: card.iconColor }}
+                >
+                  {card.icon}
+                </div>
+                <Typography.H3Medium className="text-gray">
+                  {card.title}
+                </Typography.H3Medium>
+                <Typography className="font-light text-gray" >
+                  {card.content}
+                </Typography>
+              </Card>
+            ))}
+          </div>
         </div>
       </MainWrapper>
     </SectionLayout>

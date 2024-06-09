@@ -62,7 +62,7 @@ export const WTPSection = () => {
                 showAnim
               >
                 <div
-                  className="w-fit p-3 rounded-lg"
+                  className="w-fit h-fit p-3 rounded-lg"
                   style={{ backgroundColor: card.iconColor }}
                 >
                   {card.icon}

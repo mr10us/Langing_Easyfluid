@@ -32,7 +32,7 @@ export const HeroSection = () => {
     <SectionLayout
       style={{
         backgroundImage: "url(/hero.svg)",
-        backgroundRepeat: "norepeat",
+        backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}
       className="max-h-[800px] h-[800px] flex items-center"

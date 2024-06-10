@@ -36,7 +36,6 @@ const blockTwo = [
   {
     text: "The opposite scenario - you have less heat but more chips produced in your work.",
     color: "gray-dark",
-
     fontWeight: "regular",
   },
   {

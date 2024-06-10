@@ -8,6 +8,10 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+.font-inter-heebo {
+  font-family: 'Inter', 'Heebo', sans-serif;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -38,4 +42,10 @@ body {
 
 .link:hover > span {
   transform: translateX(10px);
+}
+.scenario-up {
+  transform: rotate(180deg);
+}
+.scenario-up > path {
+  fill: #16A34A;
 }

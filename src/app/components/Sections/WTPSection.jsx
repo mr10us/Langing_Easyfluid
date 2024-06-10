@@ -31,22 +31,29 @@ const cards = [
 
 export const WTPSection = () => {
   return (
-    <SectionLayout
-      style={{
-        backgroundImage: "url(/WTP-bg.svg)",
-        backgroundRepeat: "no-repeat",
-        backgroundColor: "#F8F8F8",
-      }}
-      className="max-h-[470px] h-[470px]"
-    >
-      <MainWrapper style={{ height: "100%" }}>
-        <div className="h-[152px] flex flex-col justify-center">
-          <Typography.H2Bold>What’s the point?</Typography.H2Bold>
-          <Typography.P18>The goal of the service is:</Typography.P18>
-        </div>
+    <SectionLayout className="max-h-[470px] h-[470px]">
+      <div
+        style={{
+          backgroundImage: "url(/WTP-bg.svg)",
+          backgroundRepeat: "no-repeat",
+          backgroundColor: "#F8F8F8",
+          backgroundSize: "cover"
+        }}
+      >
+        <MainWrapper style={{ height: "100%" }}>
+          <div className="h-[152px] flex flex-col justify-center">
+            <Typography.H2Bold className="text-gray-100">
+              What’s the point?
+            </Typography.H2Bold>
+            <Typography.P18 className="text-gray-100">
+              The goal of the service is:
+            </Typography.P18>
+          </div>
+        </MainWrapper>
+      </div>
+      <MainWrapper style={{height: "calc(100% - 152px)"}}>
         <div
-          className="flex items-center justify-center"
-          style={{ height: "calc(100% - 152px)" }}
+          className="flex items-center justify-center h-full"
         >
           <div className="group flex gap-5 justify-between h-3/4">
             {cards.map((card) => (
@@ -70,7 +77,7 @@ export const WTPSection = () => {
                 <Typography.H3Medium className="text-gray">
                   {card.title}
                 </Typography.H3Medium>
-                <Typography className="font-light text-gray" >
+                <Typography className="font-light text-gray">
                   {card.content}
                 </Typography>
               </Card>

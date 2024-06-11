@@ -31,7 +31,7 @@ const cards = [
 
 export const WTPSection = () => {
   return (
-    <SectionLayout className="max-h-[470px] h-[470px]">
+    <SectionLayout className="max-h-[470px] h-[470px]" id="about">
       <div
         style={{
           backgroundImage: "url(/WTP-bg.svg)",

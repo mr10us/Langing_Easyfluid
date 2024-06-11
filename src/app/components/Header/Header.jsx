@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { MainWrapper } from "../../layouts/MainWrapper";
-import links from "./links.json";
+import links from "@/app/nav.json";
 import Image from "next/image";
 import { WhiteButton } from "../UI/Buttons/WhiteButton";
 import { useEffect, useState } from "react";

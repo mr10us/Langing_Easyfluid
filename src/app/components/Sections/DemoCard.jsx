@@ -1,14 +1,10 @@
-import { MainWrapper } from "@/app/layouts/MainWrapper";
 import { SectionCard } from "@/app/layouts/SectionCard";
-import { SectionLayout } from "@/app/layouts/SectionLayout";
 import { Typography } from "../UI/Typography";
 import { BlueButton } from "../UI/Buttons/BlueButton";
 import Image from "next/image";
 
-export const DemoSection = () => {
+export const DemoCard = () => {
   return (
-    <SectionLayout className="mb-16">
-      <MainWrapper>
         <SectionCard className="max-h-[275px] h-[275px] overflow-hidden flex flex-col md:flex-row gap-6 md:justify-between bg-demo-gradient px-20">
           <div className="flex flex-col gap-5 md:w-1/2 w-full self-center justify-between">
             <h2 className="font-medium text-5xl text-gray-dark leading-[4.5rem]">
@@ -30,7 +26,5 @@ export const DemoSection = () => {
             />
           </div>
         </SectionCard>
-      </MainWrapper>
-    </SectionLayout>
   );
 };

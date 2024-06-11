@@ -30,6 +30,7 @@ export const HeroSection = () => {
 
   return (
     <SectionLayout
+    id="hero"
       style={{
         backgroundImage: "url(/hero.svg)",
         backgroundRepeat: "no-repeat",
@@ -66,6 +67,7 @@ export const HeroSection = () => {
               animate="show"
             >
               <Image
+                className="h-auto"
                 src="/phone_page.png"
                 width="335"
                 height="530"
@@ -87,6 +89,7 @@ export const HeroSection = () => {
               animate="show"
             >
               <Image
+                className="h-auto"
                 src="/widget.png"
                 width="220"
                 height="150"
@@ -104,6 +107,7 @@ export const HeroSection = () => {
               variants={fadeIn}
             >
               <Image
+                className="h-auto"
                 src="/man1.png"
                 width="110"
                 height="110"
@@ -121,6 +125,7 @@ export const HeroSection = () => {
               variants={fadeIn}
             >
               <Image
+                className="h-auto"
                 src="/man2.png"
                 width="64"
                 height="64"
@@ -138,6 +143,7 @@ export const HeroSection = () => {
               variants={fadeIn}
             >
               <Image
+                className="h-auto"
                 src="/man3.png"
                 width="74"
                 height="74"

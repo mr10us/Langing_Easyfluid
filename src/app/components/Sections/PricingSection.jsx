@@ -23,7 +23,7 @@ const cards = [
 
 export const PricingSection = () => {
   return (
-    <SectionLayout className="bg-[#f8f8f8] py-16">
+    <SectionLayout className="bg-[#f8f8f8] py-16" id="pricing">
       <MainWrapper>
         <h2 className="text-center text-5xl font-medium text-blue">Pricing</h2>
         <div className="flex flex-col md:flex-row gap-8 group transition-all my-10 w-11/12 mx-auto">

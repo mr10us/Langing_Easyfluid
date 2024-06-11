@@ -1,0 +1,7 @@
+[
+  {"label": "About", "path": "#about"},
+  {"label": "Features", "path": "#features"},
+  {"label": "Special features", "path": "#specials"},
+  {"label": "Contacts", "path": "#contacts"},
+  {"label": "Pricing", "path": "#pricing"}
+]

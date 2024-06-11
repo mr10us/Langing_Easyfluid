@@ -47,7 +47,7 @@ const blockTwo = [
 
 export const SpecialFSection = () => {
   return (
-    <SectionLayout className="h-full bg-white py-20">
+    <SectionLayout className="h-full bg-white py-20" id="specials">
       <MainWrapper>
         <div
           className="rounded-[30px] p-10 shadow-md hover:shadow-2xl transition-shadow duration-500"

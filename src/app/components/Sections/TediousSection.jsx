@@ -5,9 +5,9 @@ import { Typography } from "../UI/Typography";
 
 export const TediousSection = () => {
   return (
-    <SectionLayout className="bg-tedious-gradient max-h-[215px] h-[215px] overflow-hidden mb-20">
+    <SectionLayout className="bg-tedious-gradient max-h-[215px] h-[215px] overflow-hidden">
       <MainWrapper className="flex flex-col md:flex-row justify-between gap-4 items-center h-full">
-        <div className="md:w-1/2 -mt-6">
+        <div className="md:w-1/2">
           <Image
             src="/tedious.png"
             width="300"

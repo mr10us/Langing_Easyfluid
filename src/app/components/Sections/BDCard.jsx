@@ -1,14 +1,10 @@
-import { MainWrapper } from "@/app/layouts/MainWrapper";
-import { SectionLayout } from "@/app/layouts/SectionLayout";
 import Image from "next/image";
 import { Typography } from "../UI/Typography";
 import { BlueButton } from "../UI/Buttons/BlueButton";
 import { SectionCard } from "@/app/layouts/SectionCard";
 
-export const BDSection = () => {
+export const BDCard = () => {
   return (
-    <SectionLayout className="py-16 mb-10">
-      <MainWrapper>
         <SectionCard className="max-h-[375px] overflow-hidden flex flex-col md:flex-row gap-6 md:justify-between bg-bd-gradient pr-20">
           <div className="md:w-1/2 w-full">
             <Image
@@ -31,7 +27,5 @@ export const BDSection = () => {
             <BlueButton.a block>Book a Demo!</BlueButton.a>
           </div>
         </SectionCard>
-      </MainWrapper>
-    </SectionLayout>
   );
 };

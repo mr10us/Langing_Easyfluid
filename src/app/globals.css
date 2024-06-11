@@ -20,6 +20,16 @@
   }
 }
 
+html, section {
+  scroll-behavior: smooth;
+  scroll-margin-top: 86px;
+}
+
+div {
+  scroll-behavior: smooth;
+  scroll-margin-top: 116px;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(

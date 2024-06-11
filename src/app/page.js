@@ -1,9 +1,7 @@
+import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
-import { BDSection } from "./components/Sections/BDSection";
-import { DemoSection } from "./components/Sections/DemoSection";
-import { EFDemoSection } from "./components/Sections/EFDemoSection";
+import { CardsSection } from "./components/Sections/CardsSection";
 import { FeaturesSection } from "./components/Sections/FeaturesSection";
-import { HTSSection } from "./components/Sections/HTSSection";
 import { HeroSection } from "./components/Sections/HeroSection";
 import { PricingSection } from "./components/Sections/PricingSection";
 import { SMMSection } from "./components/Sections/SMMSection";
@@ -23,11 +21,9 @@ export default function Home() {
       <SMMSection />
       <ScenarioSection />
       <TediousSection />
-      <EFDemoSection />
-      <BDSection />
-      <HTSSection />
-      <DemoSection />
+      <CardsSection />
       <PricingSection />
+      <Footer />
     </main>
   );
 }

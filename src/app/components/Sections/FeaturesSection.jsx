@@ -40,6 +40,7 @@ export const FeaturesSection = () => {
         backgroundColor: "#FFF",
       }}
       className="max-h-[615px] h-[615px]"
+      id="features"
     >
       <MainWrapper
         style={{

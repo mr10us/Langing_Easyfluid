@@ -1,14 +1,10 @@
-import { MainWrapper } from "@/app/layouts/MainWrapper";
-import { SectionLayout } from "@/app/layouts/SectionLayout";
 import { TextWrapper } from "@/app/layouts/TextWrapper";
 import { BlueButton } from "../UI/Buttons/BlueButton";
 import { SectionCard } from "@/app/layouts/SectionCard";
 
-export const HTSSection = () => {
+export const HTSCard = () => {
   return (
-    <SectionLayout className="mb-16">
-      <MainWrapper>
-        <SectionCard style={{backgroundImage: "url('/bg-2.svg')"}}>
+        <SectionCard style={{backgroundImage: "url('/bg-2.svg')"}} id="contacts">
           <TextWrapper className="py-20 flex flex-col gap-4 items-center">
             <h2 className="font-medium text-5xl text-gray-100">
               Well, sounds good. How to start?
@@ -22,7 +18,5 @@ export const HTSSection = () => {
             <BlueButton.a style={{width: "60%", justifyContent: "center"}}>Contact Us</BlueButton.a>
           </TextWrapper>
         </SectionCard>
-      </MainWrapper>
-    </SectionLayout>
   );
 };

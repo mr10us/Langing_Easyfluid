@@ -11,9 +11,9 @@ import Instagram from "../../../../public/instagram.svg";
 import React from "react";
 
 const media = [
-  { icon: <Facebook />, link: "#" },
-  { icon: <Twitter />, link: "#" },
-  { icon: <Instagram />, link: "#" },
+  { icon: <Facebook />, link: "#1" },
+  { icon: <Twitter />, link: "#2" },
+  { icon: <Instagram />, link: "#3" },
 ];
 
 const currentYear = new Date().getFullYear();
@@ -22,9 +22,10 @@ export const Footer = () => {
   return (
     <footer className="bg-[#182233]">
       <MainWrapper className="flex gap-6 flex-col py-8">
-        <div className="flex justify-between items-center">
-          <Link href="#hero">
+        <div className="flex gap-12 md:justify-between items-center">
+          <Link href="#hero" className="w-20">
             <Image
+            className="h-auto"
               src="/logo1.svg"
               width="100"
               height="100"
@@ -32,16 +33,16 @@ export const Footer = () => {
               title="Easyfluid logo"
             />
           </Link>
-          <div className="flex flex-col md:flex-row md:gap-8 gap-4 items-center basis-2/5 justify-between">
+          <div className="flex flex-col gap-4 items-center basis-full justify-between md:basis-3/5 md:flex-row md:gap-8">
             <p className="text-gray-100 text-2xl">Ready to get started?</p>
-            <WhiteButton.a className="rounded-lg px-4 py-3">
+            <WhiteButton.a className="rounded-lg px-4 py-3 w-full md:w-auto">
               Join to Easy Fluid
             </WhiteButton.a>
           </div>
         </div>
         <hr className="border-white border-t-[0.5px] opacity-10" />
-        <div className="flex justify-between gap-14">
-          <div className="flex flex-col gap-4 justify-between">
+        <div className="flex flex-col-reverse md:flex-row items-center md:items-start md:justify-between gap-14">
+          <div className="flex flex-col gap-8 justify-between lg:gap-4 sm:items-center md:items-start">
             <p className="text-2xl text-gray-100">
               Subscribe to our newsletter
             </p>
@@ -56,29 +57,27 @@ export const Footer = () => {
               </WhiteButton>
             </div>
           </div>
-          <div>
-            <ul className="flex flex-col gap-3">
-              {links.map((link) => (
-                <li key={link.label} className="text-gray-100">
-                  <Link href={link.path}>{link.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <ul className="hidden md:flex md:flex-col md:gap-3">
+            {links.map((link) => (
+              <li key={link.label} className="text-gray-100">
+                <Link href={link.path}>{link.label}</Link>
+              </li>
+            ))}
+          </ul>
           <div className="flex flex-col justify-between gap-10">
             <div className="flex flex-col gap-2">
-              <div className="flex gap-4">
+              <div className="flex gap-4 items-center">
                 <Pin />
                 <p className="text-gray-300 font-light">
                   Katusepapi 4, Tallinn, 11412
                 </p>
               </div>
-              <div className="flex gap-4">
+              <div className="flex gap-4 items-center">
                 <Phone />
                 <p className="text-gray-300 font-light">+372 6008211</p>
               </div>
             </div>
-            <div className="flex gap-10">
+            <div className="flex items-center justify-center gap-10">
               {media.map((social) => (
                 <a href={social.link} key={social.link}>
                   {social.icon}
@@ -87,8 +86,8 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-between gap-16 text-gray-100 pt-12">
-          <p>© {currentYear} EasyFluid. All rights reserved</p>
+        <div className="flex flex-col-reverse items-center gap-6 md:flex-row md:items-start justify-between md:gap-16 text-gray-100 pt-12">
+          <p className="text-[#AAA]">© {currentYear} EasyFluid. All rights reserved</p>
           <span className="flex gap-6">
             <a href="#">Terms & Conditions</a>
             <a href="#">Privacy Policy</a>

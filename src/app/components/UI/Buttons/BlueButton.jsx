@@ -2,22 +2,30 @@ import { cn } from "@/app/utils";
 import Link from "next/link";
 
 export const BlueButton = ({ children, onClick, style, className }) => {
-  const defaultStyles =
-    " bg-blue text-gray-100 text-xl font-medium px-4 py-2 rounded-xl";
-  const styles = className ? className + defaultStyles : defaultStyles;
   return (
-    <button onClick={onClick} className={styles} style={style}>
+    <button
+      onClick={onClick}
+      className={cn(
+        "bg-blue text-gray-100 text-xl font-medium px-4 py-2 rounded-xl",
+        className
+      )}
+      style={style}
+    >
       {children}
     </button>
   );
 };
 
 BlueButton.Link = ({ children, href, style, className }) => {
-  const defaultStyles =
-    " bg-blue text-gray-100 text-xl font-medium px-4 py-2 rounded-xl";
-  const styles = className ? className + defaultStyles : defaultStyles;
   return (
-    <Link href={href} className={styles} style={style}>
+    <Link
+      href={href}
+      className={cn(
+        "bg-blue text-gray-100 text-xl font-medium px-4 py-2 rounded-xl",
+        className
+      )}
+      style={style}
+    >
       {children}
     </Link>
   );

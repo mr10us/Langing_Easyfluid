@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        head: "1024px"
+      },
       fontFamily: {
         inter: "var(--inter-font)",
         heebo: "var(--heebo-font)",

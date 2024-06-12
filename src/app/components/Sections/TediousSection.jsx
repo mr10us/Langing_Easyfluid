@@ -5,7 +5,7 @@ import { Typography } from "../UI/Typography";
 
 export const TediousSection = () => {
   return (
-    <SectionLayout className="bg-tedious-gradient max-h-[215px] h-[215px] overflow-hidden">
+    <SectionLayout className="bg-tedious-gradient md:max-h-[215px] md:h-[215px] py-10 md:py-0 overflow-hidden">
       <MainWrapper className="flex flex-col md:flex-row justify-between gap-4 items-center h-full">
         <div className="md:w-1/2">
           <Image
@@ -16,7 +16,7 @@ export const TediousSection = () => {
             title="questioning man"
           />
         </div>
-        <div className="md:w-1/2">
+        <div className="md:w-1/2 text-center md:text-start">
           <Typography.H2Medium className="text-gray-dark">
             Sounds tedious, right?
           </Typography.H2Medium>

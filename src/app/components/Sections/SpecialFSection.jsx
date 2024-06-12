@@ -50,14 +50,14 @@ export const SpecialFSection = () => {
     <SectionLayout className="h-full bg-white py-20" id="specials">
       <MainWrapper>
         <div
-          className="rounded-[30px] p-10 shadow-md hover:shadow-2xl transition-shadow duration-500"
+          className="rounded-[30px] py-5 md:py-0 md:p-10 shadow-md hover:shadow-2xl transition-shadow duration-500"
           style={{
             backgroundImage: "url('/specialF.svg')",
             backgroundColor: "#fafafa",
             backgroundSize: "cover",
           }}
         >
-          <TextWrapper style={{ padding: "0 60px" }}>
+          <TextWrapper style={{ padding: "20px 60px" }}>
             <Typography.H2Bold className="text-gray-dark w-3/4 text-center mx-auto mb-10">
               Some <span className="text-blue">special features</span> that
               relate to cutting fluids

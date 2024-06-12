@@ -11,7 +11,7 @@ export const ScenarioSection = () => {
   return (
     <SectionLayout className="bg-white py-16">
       <MainWrapper>
-        <div className="bg-scenatio-gradient rounded-[20px] flex flex-col gap-20 py-10 shadow-md hover:shadow-2xl transition-shadow duration-500">
+        <div className="bg-scenatio-gradient rounded-[20px] flex flex-col gap-20 py-10 px-6 shadow-md hover:shadow-2xl transition-shadow duration-500">
           <ScenarioOne />
           <ScenarioTwo />
         </div>
@@ -63,7 +63,7 @@ const ScenarioOne = () => {
       </p>
       <div className="flex justify-between w-full gap-5">
         {scenatioCardsOne.map((card) => (
-          <Card key={card.title} className="relative w-full bg-white">
+          <Card key={card.title} className="relative w-full flex flex-col gap-4 lg:gap-10 bg-white">
             <Arrow className={`${card.arrow} absolute top-5 right-5`} />
             <p
               className={`font-inter text-2xl font-bold font ${
@@ -156,7 +156,7 @@ const ScenarioTwo = () => {
       </p>
       <div className="flex justify-between w-full gap-5">
         {scenatioCardsTwo.map((card) => (
-          <Card key={card.title} className="relative w-full bg-white">
+          <Card key={card.title} className="relative w-full flex flex-col gap-4 lg:gap-10 bg-white">
             <Arrow className={`${card.arrow} absolute top-5 right-5`} />
             <p
               className={`font-inter text-2xl font-bold font ${

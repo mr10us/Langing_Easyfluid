@@ -25,7 +25,7 @@ export const SMMSection = () => {
   return (
     <SectionLayout className="bg-white py-10 pb-20">
       <MainWrapper>
-        <div className="px-5 flex flex-col justify-center gap-5 items-center mb-10">
+        <div className="px-5 flex flex-col justify-center gap-5 items-center mb-10 text-center lg:text-start">
           <Typography.H2Medium className="text-gray-dark">
             Let’s look into what it actually leads to, i.e.,
             <span className="text-blue">“Show me the money”!</span>
@@ -35,25 +35,18 @@ export const SMMSection = () => {
           </p>
         </div>
         <div className="flex items-center justify-center">
-          <div className="group flex gap-5 justify-between h-1/2 w-full">
+          <div className="group flex gap-5 flex-col md:flex-row justify-between h-1/2 md:w-full">
             {cards.map((card) => (
               <Card
-                className="card transition-opacity duration-500 shadow-2xl"
-                style={{
-                  display: "grid",
-                  gridTemplateRows: "repeat(3, 1fr)",
-                  gap: 15,
-                  width: "calc((100% - 40px) / 3)",
-                }}
+                className="three_cards-width card transition-opacity duration-500 shadow-2xl grid grid-rows-[1fr, 1fr, 1fr] gap-4"
                 key={card.title}
                 showAnim
               >
-                <p className="text-2xl font-bold text-blue">{card.title}</p>
-
-                <p className="text-gray-dark text-xl font-medium">
+                <p className="text-2xl font-bold text-blue self-start">{card.title}</p>
+                <p className="text-gray-dark text-xl font-medium self-start">
                   {card.subtitle}
                 </p>
-                <p className="text-gray font-regular text-xl">{card.content}</p>
+                <p className="text-gray font-regular text-xl self-end">{card.content}</p>
               </Card>
             ))}
           </div>

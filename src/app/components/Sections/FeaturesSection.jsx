@@ -3,6 +3,7 @@ import { SectionLayout } from "@/app/layouts/SectionLayout";
 import { Typography } from "../UI/Typography";
 import { Card } from "../UI/Card";
 import { BlueButton } from "../UI/Buttons/BlueButton";
+import { SectionCard } from "@/app/layouts/SectionCard";
 
 const cards = [
   {
@@ -28,7 +29,7 @@ const cards = [
     content: [
       "Calculate required top-up concentration per machine based on actual machine sump level",
       "Calculate corrections to the mixer (more on that below)",
-      "Perform various calculations with parameters like Concentration =RefractometerReading*OpticalFactor or any other that you would like to create",
+      "Perform various calculations with parameters like Concentration =RefractometerReading * OpticalFactor or any other that you would like to create",
     ],
   },
 ];
@@ -39,7 +40,7 @@ export const FeaturesSection = () => {
       style={{
         backgroundColor: "#FFF",
       }}
-      className="max-h-[615px] h-[615px]"
+      className="lg:max-h-[615px] lg:h-[615px]"
       id="features"
     >
       <MainWrapper
@@ -54,14 +55,10 @@ export const FeaturesSection = () => {
         <Typography.H2Bold className="text-gray-dark pt-10">
           Features
         </Typography.H2Bold>
-        <div className="flex justify-center items-center gap-5 h-2/3 mt-7 mb-12">
+        <div className="flex md:flex-row flex-col md:justify-center md:items-center gap-5 h-3/5 mt-7 mb-12">
           {cards.map((card) => (
-            <Card
-              className="h-full shadow-xl"
-              style={{
-                width: "calc((100% - 40px) / 3)",
-                backgroundColor: "rgba(255, 255, 255, 0.4)",
-              }}
+            <SectionCard
+              className="h-full w-full shadow-xl self-start three_cards-width bg-white bg-opacity-40"
               key={card.title}
             >
               <Typography.H2Medium style={{color: "#116ACC"}}>
@@ -72,7 +69,7 @@ export const FeaturesSection = () => {
                   <li key={index} className="ml-5 my-2 tracking-wider">{item}</li>
                 ))}
               </ul>
-            </Card>
+            </SectionCard>
           ))}
         </div>
         <div className="w-full">

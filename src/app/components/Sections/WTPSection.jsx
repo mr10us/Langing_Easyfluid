@@ -31,13 +31,13 @@ const cards = [
 
 export const WTPSection = () => {
   return (
-    <SectionLayout className="max-h-[470px] h-[470px]" id="about">
+    <SectionLayout className="md:max-h-[470px] md:h-[470px]" id="about">
       <div
         style={{
           backgroundImage: "url(/WTP-bg.svg)",
           backgroundRepeat: "no-repeat",
           backgroundColor: "#F8F8F8",
-          backgroundSize: "cover"
+          backgroundSize: "cover",
         }}
       >
         <MainWrapper style={{ height: "100%" }}>
@@ -51,20 +51,12 @@ export const WTPSection = () => {
           </div>
         </MainWrapper>
       </div>
-      <MainWrapper style={{height: "calc(100% - 152px)"}}>
-        <div
-          className="flex items-center justify-center h-full"
-        >
-          <div className="group flex gap-5 justify-between h-3/4">
+      <MainWrapper style={{ height: "calc(100% - 152px)" }}>
+        <div className="flex items-center justify-center h-full">
+          <div className="group flex gap-5 justify-between flex-col h-5/6 md:flex-row my-6 md:py-0">
             {cards.map((card) => (
               <Card
-                className="card transition-opacity duration-500"
-                style={{
-                  display: "grid",
-                  gridTemplateRows: "repeat(3, 1fr)",
-                  gap: 15,
-                  width: "calc((100% - 40px) / 3)",
-                }}
+                className="card transition-opacity duration-500 grid grid-cols-[auto,1fr,1fr] md:grid-cols-1 items-center md:items-start md:grid-rows-[0.5fr,0.5fr,1fr] gap-4 md:three_cards-width w-full"
                 key={card.title}
                 showAnim
               >

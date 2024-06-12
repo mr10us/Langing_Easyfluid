@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import React from "react";
 import Image from "next/image";
@@ -14,6 +14,7 @@ import {
   staggerContainer,
 } from "@/app/animations/HeroSection";
 import useScrollAnimations from "@/app/hooks/useScrollAnimations";
+import useIsMobile from "@/app/hooks/useIsMobile";
 
 export const HeroSection = () => {
   const {
@@ -27,20 +28,21 @@ export const HeroSection = () => {
     manTwoX,
     manThreeX,
   } = useScrollAnimations();
+  const isMobile = useIsMobile();
 
   return (
     <SectionLayout
-    id="hero"
+      id="hero"
       style={{
         backgroundImage: "url(/hero.svg)",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}
-      className="max-h-[800px] h-[800px] flex items-center"
+      className="md:max-h-[800px] md:h-[800px] flex items-center overflow-hidden"
     >
       <MainWrapper>
-        <div className="flex justify-between w-full gap-40">
-          <div className="basis-1/2">
+        <div className="flex justify-between flex-col md:flex-row w-full gap-40 mt-[120px] md:mt-0">
+          <div className="md:basis-1/2">
             <h1 className="font-bold text-gray-100 text-5xl mb-5">
               Welcome EasyFluid!
             </h1>
@@ -48,26 +50,29 @@ export const HeroSection = () => {
               EasyFluid is a web based service for monitoring your metalworking
               fluids, oils etc.
             </p>
-            <div className="flex gap-5 my-12">
+            <div className="flex flex-row md:flex-col lg:flex-row gap-5 my-12">
               <BlueButton>Go to EasyFluid</BlueButton>
               <TransparentButton>Book a Demo!</TransparentButton>
             </div>
           </div>
           <motion.div
-            className="relative basis-1/2"
+            className="relative md:basis-1/2 w-full md:w-1/2 lg: h-[460px] md:h-[252px]"
             initial="hidden"
             animate="show"
             variants={staggerContainer}
           >
             <motion.div
-              className={`absolute -top-[120px] -right-4`}
-              style={{ x: phoneX, willChange: "transform", zIndex: 10 }}
+              className={`absolute -top-[120px] -right-16 md:-top-20 md:-right-4 lg:-top-[120px] lg:w-3/4`}
+              style={{
+                zIndex: 10,
+                ...(isMobile ? {} : { x: phoneX, willChange: "transform" }),
+              }}
               variants={slideInY}
               initial="hidden"
               animate="show"
             >
               <Image
-                className="h-auto"
+                className="h-auto w-2/3 md:w-full"
                 src="/phone_page.png"
                 width="335"
                 height="530"
@@ -77,12 +82,12 @@ export const HeroSection = () => {
               />
             </motion.div>
             <motion.div
-              className="absolute drop-shadow-xl top-28 left-16 py-2 px-6 rounded-2xl overflow-hidden bg-[#E3F0FF]"
+              className="absolute w-1/2 drop-shadow-xl top-0 left-20 sm:left-40 md:-left-6 md:top-28 md:w-4/5 lg:w-auto lg:top-20 lg:left-16 py-2 px-6 rounded-2xl overflow-hidden bg-[#E3F0FF]"
               style={{
-                y: widgetY,
-                x: widgetX,
-                willChange: "transform",
                 zIndex: 13,
+                ...(isMobile
+                  ? {}
+                  : { y: widgetY, x: widgetX, willChange: "transform" }),
               }}
               variants={slideInX}
               initial="hidden"
@@ -97,12 +102,12 @@ export const HeroSection = () => {
               />
             </motion.div>
             <motion.div
-              className="absolute left-0 -bottom-48"
+              className="absolute left-10 bottom-28 md:-left-28 md:-bottom-28 lg:-left-0 lg:-bottom-44"
               style={{
-                y: manOneY,
-                x: manOneX,
-                willChange: "transform",
                 zIndex: 11,
+                ...(isMobile
+                  ? {}
+                  : { y: manOneY, x: manOneX, willChange: "transform" }),
               }}
               variants={fadeIn}
             >
@@ -115,12 +120,12 @@ export const HeroSection = () => {
               />
             </motion.div>
             <motion.div
-              className="absolute top-1/2 translate-y-1/2 -left-14"
+              className="absolute top-1/4 left-0 scale-125 md:-left-28 md:top-28 md:scale-0 lg:-left-40"
               style={{
-                y: manTwoY,
-                x: manTwoX,
-                willChange: "transform",
                 zIndex: 12,
+                ...(isMobile
+                  ? {}
+                  : { y: manTwoY, x: manTwoX, willChange: "transform" }),
               }}
               variants={fadeIn}
             >
@@ -133,12 +138,12 @@ export const HeroSection = () => {
               />
             </motion.div>
             <motion.div
-              className="absolute"
+              className="absolute -top-28 left-20 md:top-0 md:-left-10 lg:-top-16 lg:-left-0"
               style={{
-                y: manThreeY,
-                x: manThreeX,
-                willChange: "transform",
                 zIndex: 14,
+                ...(isMobile
+                  ? {}
+                  : { y: manThreeY, x: manThreeX, willChange: "transform" }),
               }}
               variants={fadeIn}
             >

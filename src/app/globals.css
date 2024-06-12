@@ -9,7 +9,7 @@
 }
 
 .font-inter-heebo {
-  font-family: 'Inter', 'Heebo', sans-serif;
+  font-family: "Inter", "Heebo", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +20,8 @@
   }
 }
 
-html, section {
+html,
+section {
   scroll-behavior: smooth;
   scroll-margin-top: 86px;
 }
@@ -28,6 +29,9 @@ html, section {
 div {
   scroll-behavior: smooth;
   scroll-margin-top: 116px;
+}
+
+a {
 }
 
 body {
@@ -57,5 +61,27 @@ body {
   transform: rotate(180deg);
 }
 .scenario-up > path {
-  fill: #16A34A;
+  fill: #16a34a;
+}
+
+.p18 {
+  font-size: clamp(1rem, 0.867rem + 0.426vw, 1.25rem);
+}
+.h2 {
+  font-size: clamp(2.125rem, 1.639rem + 1.556vw, 3rem);
+}
+.h2_bold {
+  font-size: clamp(2rem, 1.734rem + 0.851vw, 2.5rem);
+}
+.h2_medium {
+  font-size: clamp(1.75rem, 1.484rem + 0.851vw, 2.25rem);
+}
+.h3_medium {
+  font-size: clamp(1.375rem, 1.109rem + 0.851vw, 1.875rem);
+}
+
+@media (min-width: 768px) {
+  .three_cards-width {
+    width: calc((100% - 40px) / 3);
+  }
 }

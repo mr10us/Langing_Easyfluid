@@ -3,6 +3,7 @@ import { SectionLayout } from "@/app/layouts/SectionLayout";
 import { Typography } from "../UI/Typography";
 import { TextWrapper } from "@/app/layouts/TextWrapper";
 import Image from "next/image";
+import { SectionCard } from "@/app/layouts/SectionCard";
 
 const blockOne = [
   {
@@ -45,12 +46,22 @@ const blockTwo = [
   },
 ];
 
+/**
+ * SpecialFSection component displays some special features related to cutting fluids.
+ * It uses SectionLayout and MainWrapper components to create a section layout.
+ * Inside the section layout, there is a div with a background image and styles.
+ * Inside the div, there is a TextWrapper component with some Typography components and two Image components.
+ * The Typography components display blocks of text from blockOne and blockTwo arrays.
+ * The Image components display two graphs.
+ */
 export const SpecialFSection = () => {
   return (
+    // SectionLayout component with id "specials" and className "h-full bg-white py-20"
     <SectionLayout className="h-full bg-white py-20" id="specials">
       <MainWrapper>
-        <div
-          className="rounded-[30px] py-5 md:py-0 md:p-10 shadow-md hover:shadow-2xl transition-shadow duration-500"
+        {/* Div with rounded corner, padding, shadow and background image */}
+        <SectionCard
+          className="py-5 md:py-0 md:p-10"
           style={{
             backgroundImage: "url('/specialF.svg')",
             backgroundColor: "#fafafa",
@@ -59,17 +70,21 @@ export const SpecialFSection = () => {
         >
           <TextWrapper style={{ padding: "20px 60px" }}>
             <Typography.H2Bold className="text-gray-dark w-3/4 text-center mx-auto mb-10">
+              {/* Heading with blue text "special features" */}
               Some <span className="text-blue">special features</span> that
               relate to cutting fluids
             </Typography.H2Bold>
+            {/* Map over blockOne array to display Typography components */}
             {blockOne.map((item, index) => (
               <Typography
                 key={index}
                 className={`text-${item.color} font-${item.fontWeight} text-gray mb-5`}
               >
+                {/* Display text from item */}
                 {item.text}
               </Typography>
             ))}
+            {/* Display first graph */}
             <Image
               src="/firstSpecial.png"
               className="mx-auto mb-10"
@@ -77,14 +92,17 @@ export const SpecialFSection = () => {
               height="515"
               alt="graph"
             />
+            {/* Map over blockTwo array to display Typography components */}
             {blockTwo.map((item, index) => (
               <Typography
                 key={index}
                 className={`text-${item.color} font-${item.fontWeight} text-gray mb-5`}
               >
+                {/* Display text from item */}
                 {item.text}
               </Typography>
             ))}
+            {/* Display second graph */}
             <Image
               src="/secondSpecial.png"
               className="mx-auto mb-10"
@@ -93,7 +111,7 @@ export const SpecialFSection = () => {
               alt="graph"
             />
           </TextWrapper>
-        </div>
+        </SectionCard>
       </MainWrapper>
     </SectionLayout>
   );

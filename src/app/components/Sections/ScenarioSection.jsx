@@ -7,12 +7,25 @@ import Arrow from "../../../../public/arrow.svg";
 import React from "react";
 import Image from "next/image";
 
+/**
+ * ScenarioSection component.
+ * This component renders the scenario section of the page.
+ * It contains two scenario cards, ScenarioOne and ScenarioTwo.
+ *
+ * @return {JSX.Element} The rendered scenario section.
+ */
 export const ScenarioSection = () => {
+  // Render the scenario section
   return (
+    // Apply styling to the section
     <SectionLayout className="bg-white py-16">
+      {/* Wrap the main content */}
       <MainWrapper>
+        {/* Apply styling to the container */}
         <div className="bg-scenatio-gradient rounded-[20px] flex flex-col gap-20 py-10 px-6 shadow-md hover:shadow-2xl transition-shadow duration-500">
+          {/* Render the first scenario card */}
           <ScenarioOne />
+          {/* Render the second scenario card */}
           <ScenarioTwo />
         </div>
       </MainWrapper>
@@ -52,19 +65,32 @@ const scenarioTextOne = [
   },
 ];
 
+/**
+ * Render the scenario 1 component
+ * 
+ * This component displays a scenario where the concentration of the machine
+ * tank is low after a few days of operation.
+ * 
+ * @returns {JSX.Element} The rendered scenario 1 component
+ */
 const ScenarioOne = () => {
   return (
     <TextWrapper className="flex gap-6 flex-col items-center">
+      {/* Heading */}
       <Typography.H2Medium className="text-gray-dark text-2xl">
         Scenario 1
       </Typography.H2Medium>
       <p className="font-bold text-2xl text-gray">
         After a few days you have a situation like this:
       </p>
+      {/* Cards */}
       <div className="flex justify-between w-full gap-5">
+        {/* Render the cards */}
         {scenatioCardsOne.map((card) => (
-          <Card key={card.title} className="relative w-full flex flex-col gap-4 lg:gap-10 bg-white">
+          <Card key={card.title} className="relative w-1/2 flex flex-col gap-4 lg:gap-10 bg-white">
+            {/* Arrow */}
             <Arrow className={`${card.arrow} absolute top-5 right-5`} />
+            {/* Card title */}
             <p
               className={`font-inter text-2xl font-bold font ${
                 card.arrow.includes("down") ? "text-red" : "text-green"
@@ -72,10 +98,12 @@ const ScenarioOne = () => {
             >
               {card.title}
             </p>
+            {/* Card content */}
             <p className="text-xl font-medium text-gray-dark">{card.content}</p>
           </Card>
         ))}
       </div>
+      {/* Text */}
       {scenarioTextOne.map((item, index) => (
         <React.Fragment key={index}>
           <p className={`text-${item.color} font-${item.weight} self-start`}>
@@ -85,6 +113,7 @@ const ScenarioOne = () => {
         </React.Fragment>
       ))}
 
+      {/* Image */}
       <Image
         src="/report.png"
         width="510"
@@ -92,6 +121,7 @@ const ScenarioOne = () => {
         alt="Easyfluid PDF report"
         title="Easyfluid PDF report"
       />
+      {/* Text */}
       <p className="text-justify w-5/6">
         In this example total amount of water that can be added to machines
         sumps is 406L for 13 machines. With topping-up concentration of 3% you
@@ -144,20 +174,35 @@ const scenarioTextTwo = [
   },
 ];
 
+/**
+ * Render the scenario 2 component
+ * 
+ * This component displays a scenario where the concentration of the machine
+ * tank is low due to operator's inactivity.
+ * 
+ * @returns {JSX.Element} The rendered scenario 2 component
+ */
 const ScenarioTwo = () => {
   return (
+    // Wrapper for the scenario section
     <TextWrapper className="flex gap-6 flex-col items-center">
+      {/* Heading */}
       <Typography.H2Medium className="text-gray-dark text-2xl">
         Scenario 2: opposite
       </Typography.H2Medium>
+      {/* Description */}
       <p className="font-bold text-2xl text-gray text-center">
         What if your operator has not been topping up for a while and you get a
         situation like this:
       </p>
+      {/* Cards */}
       <div className="flex justify-between w-full gap-5">
+        {/* Render the cards */}
         {scenatioCardsTwo.map((card) => (
-          <Card key={card.title} className="relative w-full flex flex-col gap-4 lg:gap-10 bg-white">
+          <Card key={card.title} className="relative w-1/2 flex flex-col gap-4 lg:gap-10 bg-white">
+            {/* Arrow */}
             <Arrow className={`${card.arrow} absolute top-5 right-5`} />
+            {/* Card title */}
             <p
               className={`font-inter text-2xl font-bold font ${
                 card.arrow.includes("down") ? "text-red" : "text-green"
@@ -165,12 +210,15 @@ const ScenarioTwo = () => {
             >
               {card.title}
             </p>
+            {/* Card content */}
             <p className="text-xl font-medium text-gray-dark">{card.content}</p>
           </Card>
         ))}
       </div>
+      {/* Text */}
       {scenarioTextTwo.map((item, index) => (
         <React.Fragment key={index}>
+          {/* Text item */}
           <p className={`text-${item.color} font-${item.weight} self-start`}>
             {item.text}{" "}
             {item?.span ? <span className="text-blue">{item.span}</span> : null}

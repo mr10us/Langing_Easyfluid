@@ -34,8 +34,17 @@ const cards = [
   },
 ];
 
+/**
+ * FeaturesSection component displays the features of the EasyFluid platform.
+ * It contains a list of cards, each representing a feature.
+ * Each card has a title and a list of content describing the feature.
+ * The FeaturesSection also contains a button to navigate to the EasyFluid platform.
+ *
+ * @returns {JSX.Element} The FeaturesSection component
+ */
 export const FeaturesSection = () => {
   return (
+    // Wrap the section in a layout component
     <SectionLayout
       style={{
         backgroundColor: "#FFF",
@@ -43,6 +52,7 @@ export const FeaturesSection = () => {
       className="lg:max-h-[615px] lg:h-[615px]"
       id="features"
     >
+      {/* Wrap the main content in a wrapper component */}
       <MainWrapper
         style={{
           backgroundImage: "url(/map.svg)",
@@ -52,19 +62,23 @@ export const FeaturesSection = () => {
           height: "100%",
         }}
       >
+        {/* Display the title of the section */}
         <Typography.H2Bold className="text-gray-dark pt-10">
           Features
         </Typography.H2Bold>
         <div className="flex md:flex-row flex-col md:justify-center md:items-center gap-5 h-3/5 mt-7 mb-12">
+          {/* Map over the cards array to display each card */}
           {cards.map((card) => (
             <SectionCard
-              className="h-full w-full shadow-xl self-start three_cards-width bg-white bg-opacity-40"
+              className="h-full w-full self-start three_cards-width p-5 bg-white bg-opacity-40"
               key={card.title}
             >
+              {/* Display the title of the card */}
               <Typography.H2Medium style={{color: "#116ACC"}}>
                 {card.title}
               </Typography.H2Medium>
               <ul className="text-gray-500 list-disc text-sm mt-5">
+                {/* Map over the content array to display each item in the content list */}
                 {card.content.map((item, index) => (
                   <li key={index} className="ml-5 my-2 tracking-wider">{item}</li>
                 ))}
@@ -72,6 +86,7 @@ export const FeaturesSection = () => {
             </SectionCard>
           ))}
         </div>
+        {/* Display a button to navigate to the EasyFluid platform */}
         <div className="w-full">
           <BlueButton.a href="#" className="px-6 mx-auto" withArrow>Go to EasyFluid</BlueButton.a>
         </div>

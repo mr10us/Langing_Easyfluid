@@ -49,9 +49,11 @@ body {
     text-wrap: balance;
   }
 }
-
+.group {
+  transition: opacity 0.3s ease-in-out;
+}
 .group:hover .card:not(:hover) {
-  @apply opacity-50;
+  opacity: 0.5;
 }
 
 .link:hover > span {

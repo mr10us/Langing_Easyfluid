@@ -11,9 +11,9 @@ import Instagram from "../../../../public/instagram.svg";
 import React from "react";
 
 const media = [
-  { icon: <Facebook />, link: "#1" },
-  { icon: <Twitter />, link: "#2" },
-  { icon: <Instagram />, link: "#3" },
+  { icon: <Facebook />, link: "https://www.facebook.com/" },
+  { icon: <Twitter />, link: "https://twitter.com" },
+  { icon: <Instagram />, link: "https://www.instagram.com" },
 ];
 
 const currentYear = new Date().getFullYear();
@@ -66,16 +66,16 @@ export const Footer = () => {
           </ul>
           <div className="flex flex-col justify-between gap-10">
             <div className="flex flex-col gap-2">
-              <div className="flex gap-4 items-center">
+              <a className="flex gap-4 items-center" href="https://goo.gl/maps/TprgzrCYE4wpHHAd9" title="Location">
                 <Pin />
                 <p className="text-gray-300 font-light">
                   Katusepapi 4, Tallinn, 11412
                 </p>
-              </div>
-              <div className="flex gap-4 items-center">
+              </a>
+              <a className="flex gap-4 items-center" href="tel:+3726008211" title="Call us">
                 <Phone />
                 <p className="text-gray-300 font-light">+372 6008211</p>
-              </div>
+              </a>
             </div>
             <div className="flex items-center justify-center gap-10">
               {media.map((social) => (

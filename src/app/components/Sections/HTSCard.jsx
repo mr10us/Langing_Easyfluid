@@ -9,7 +9,7 @@ export const HTSCard = () => {
       id="contacts"
     >
       <TextWrapper className="py-20 flex flex-col gap-4 items-center">
-        <h2 className="font-medium h2 text-gray-100 text-center md:text-start w-11/12 lg:w-full">
+        <h2 className="font-medium h2 text-gray-100 text-center w-11/12 lg:w-full">
           Well, sounds good. How to start?
         </h2>
         <p className="text-center w-11/12 lg:w-1/2 text-gray-100 text-lg">

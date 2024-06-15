@@ -20,7 +20,7 @@ export const BDCard = () => {
             <h2 className="font-medium text-4xl md:text-5xl text-gray-dark md:leading-[4.5rem]">
               Do I have to use these calculations?
             </h2>
-            <Typography>
+            <Typography className="text-gray">
               No, you may opt in for just logging the data and monitoring your
               key indicators, setting aside deviation corrections calculations.
             </Typography>

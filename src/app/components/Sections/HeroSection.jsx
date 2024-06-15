@@ -62,7 +62,7 @@ export const HeroSection = () => {
             variants={staggerContainer}
           >
             <motion.div
-              className={`absolute -top-[120px] -right-16 md:-top-20 md:-right-4 lg:-top-[120px] lg:w-3/4`}
+              className={`absolute -top-[120px] -right-28 md:-top-20 md:-right-4 lg:-top-[120px] lg:w-3/4`}
               style={{
                 zIndex: 10,
                 ...(isMobile ? {} : { x: phoneX, willChange: "transform" }),

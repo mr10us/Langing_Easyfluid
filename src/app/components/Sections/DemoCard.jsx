@@ -10,7 +10,7 @@ export const DemoCard = () => {
             <h2 className="font-medium h2 text-gray-dark w-full">
               How about a demo?
             </h2>
-            <Typography>
+            <Typography className="text-gray">
             <span className="font-bold">Sure!</span> We will walk-through all the steps, show how it works and answer all your questions..
             </Typography>
             <BlueButton.a className="lg:mx-0 mx-auto">Book a Demo!</BlueButton.a>

@@ -41,7 +41,7 @@ const Drawer = ({ isDrawerOpen, toggleDrawer }) => {
           <nav className="flex gap-4 flex-col py-5 pb-10">
             {/* Map over the links array to render the links. */}
             {links.map(({ label, path }) => (
-              <Link href={path} className="text-gray-200 w-fit py-2" key={path}>
+              <Link href={path} className="text-gray-200 w-fit py-2" key={path} onClick={() => toggleDrawer()}>
                 {label}
               </Link>
             ))}

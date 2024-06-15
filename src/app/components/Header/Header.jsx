@@ -23,7 +23,7 @@ export const Header = () => {
    * Toggles the drawer state when the burger button is clicked.
    */
   const toggleDrawer = () => {
-    setIsDrawerOpen(prev => !prev);
+    setIsDrawerOpen((prev) => !prev);
   };
 
   /**
@@ -57,9 +57,10 @@ export const Header = () => {
   return (
     // The header element with the appropriate class names and styles.
     <header
-      className={`fixed top-0 left-0 w-full h-[86px] bg-gray-200 ${isDrawerOpen ? "bg-[#273040] bg-opacity-100" : "bg-opacity-5"} transition-colors duration-300 z-50 ${
+      className={`fixed top-0 left-0 w-full h-[86px] bg-gray-200 bg-opacity-5 transition-colors duration-300 z-50 ${
         isScrolled ? "bg-gray-950 bg-opacity-50" : ""
       }`}
+      style={isDrawerOpen ? { backgroundColor: "#273040" } : {}}
     >
       {/* The main wrapper for the header content. */}
       <MainWrapper className="flex items-center h-full">

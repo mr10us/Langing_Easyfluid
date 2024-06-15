@@ -42,7 +42,7 @@ export const Footer = () => {
         </div>
         <hr className="border-white border-t-[0.5px] opacity-10" />
         <div className="flex flex-col-reverse md:flex-row items-center md:items-start md:justify-between gap-14">
-          <div className="flex flex-col gap-8 justify-between lg:gap-4 sm:items-center md:items-start">
+          <div className="flex flex-col gap-8 justify-between items-center lg:gap-4 md:items-start">
             <p className="text-2xl text-gray-100">
               Subscribe to our newsletter
             </p>

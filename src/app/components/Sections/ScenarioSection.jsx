@@ -122,7 +122,7 @@ const ScenarioOne = () => {
         title="Easyfluid PDF report"
       />
       {/* Text */}
-      <p className="text-justify w-5/6">
+      <p className="text-justify w-5/6 text-gray">
         In this example total amount of water that can be added to machines
         sumps is 406L for 13 machines. With topping-up concentration of 3% you
         save 12L of concentrate, or kinda €85. Given, that average consumption

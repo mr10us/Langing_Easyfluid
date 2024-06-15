@@ -31,17 +31,9 @@ div {
   scroll-margin-top: 116px;
 }
 
-a {
-}
-
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: white
 }
 
 @layer utilities {
@@ -50,10 +42,15 @@ body {
   }
 }
 .group {
-  transition: opacity 0.3s ease-in-out;
+  -webkit-transition: .3s -webkit-filter linear;
+-moz-transition: .3s -moz-filter linear;
+-moz-transition: .3s filter linear;
+-ms-transition: .3s -ms-filter linear;
+-o-transition: .3s -o-filter linear;
+transition: .3s filter linear, .3s -webkit-filter linear;
 }
 .group:hover .card:not(:hover) {
-  opacity: 0.5;
+  filter: opacity(0.5);
 }
 
 .link:hover > span {

@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        head: "1024px"
+        head: "1024px",
       },
       fontFamily: {
         inter: "var(--inter-font)",
@@ -25,6 +25,8 @@ module.exports = {
           "linear-gradient(90deg, rgba(200,226,255,1) 0%, rgba(248,248,248,1) 100%)",
         "demo-gradient":
           "linear-gradient(270deg, rgba(200,226,255,1) 0%, rgba(248,248,248,1) 100%)",
+        "modal-gradient":
+          "linear-gradient(204deg, rgba(4,32,63,1) 0%, rgba(0,52,110,1) 100%);",
       },
       colors: {
         blue: {

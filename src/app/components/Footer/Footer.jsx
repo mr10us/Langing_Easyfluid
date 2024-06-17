@@ -33,7 +33,7 @@ export const Footer = () => {
           <Link href="#hero" className="w-20">
             <Image
               className="h-auto"
-              src="/logo1.svg"
+              src="/logo.png"
               width="100"
               height="100"
               alt="Easyfluid logo"

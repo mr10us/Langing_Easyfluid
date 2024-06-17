@@ -1,10 +1,11 @@
 import { cn } from "@/app/utils";
 import Link from "next/link";
 
-export const BlueButton = ({ children, onClick, style, className }) => {
+export const BlueButton = ({ children, onClick, style, className, type = "button" }) => {
   return (
     <button
       onClick={onClick}
+      htmlType={type}
       className={cn(
         "bg-blue text-gray-100 text-xl font-medium px-4 py-2 rounded-xl hover:bg-blue-light active:bg-blue-dark transition-colors duration-300",
         className

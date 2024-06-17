@@ -7,7 +7,9 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import Drawer from "../Drawer";
 import { WhiteButton } from "../UI/Buttons/WhiteButton";
-import { BurgerButton } from "../BurgerButton";
+import { BurgerButton } from "../UI/Buttons/BurgerButton";
+import Modal from "../Modal";
+import { ContactUsModal } from "../Modals/ContactUs";
 
 /**
  * The Header component is the top navigation bar of the website.
@@ -18,6 +20,11 @@ export const Header = () => {
   // State variables to track the scroll position and the drawer state.
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen((prev) => !prev);
+  };
 
   /**
    * Toggles the drawer state when the burger button is clicked.
@@ -69,22 +76,28 @@ export const Header = () => {
           <Link href="#hero">
             <Image
               className="h-auto"
-              src="/logo.svg"
-              width={33}
-              height={70}
+              src="/logo.png"
+              width="70"
+              height="70"
               alt="logo"
-              priority
             />
           </Link>
           {/* The navigation links. */}
           <nav className="gap-4 items-center hidden head:flex">
             {links.map(({ label, path }) => (
-              <Link href={path} className="text-gray-100 px-4 py-2 hover:text-blue transition-all" key={label}>
+              <Link
+                href={path}
+                className="text-gray-100 px-4 py-2 hover:text-blue transition-all"
+                key={label}
+              >
                 {label}
               </Link>
             ))}
             {/* The "Contact Us" button. */}
-            <WhiteButton style={{ padding: "10px 20px", borderRadius: 30 }}>
+            <WhiteButton
+              style={{ padding: "10px 20px", borderRadius: 30 }}
+              onClick={toggleModal}
+            >
               Contact Us
             </WhiteButton>
           </nav>
@@ -98,6 +111,7 @@ export const Header = () => {
       </MainWrapper>
       {/* The drawer component for mobile devices. */}
       <Drawer isDrawerOpen={isDrawerOpen} toggleDrawer={toggleDrawer} />
+      <ContactUsModal isOpen={isModalOpen} onClose={toggleModal} />
     </header>
   );
 };

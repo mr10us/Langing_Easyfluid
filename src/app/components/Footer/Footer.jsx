@@ -18,14 +18,21 @@ const media = [
 
 const currentYear = new Date().getFullYear();
 
+/**
+ * The Footer component represents the footer section of the website.
+ * It contains the necessary information and links for the user.
+ */
 export const Footer = () => {
   return (
+    // The footer element with the appropriate class names and styles.
     <footer className="bg-[#182233]">
       <MainWrapper className="flex gap-6 flex-col py-8">
+        {/* The main content of the footer */}
         <div className="flex gap-12 md:justify-between items-center">
+          {/* The logo link */}
           <Link href="#hero" className="w-20">
             <Image
-            className="h-auto"
+              className="h-auto"
               src="/logo1.svg"
               width="100"
               height="100"
@@ -33,19 +40,25 @@ export const Footer = () => {
               title="Easyfluid logo"
             />
           </Link>
+          {/* The call to action section */}
           <div className="flex flex-col gap-4 items-center basis-full justify-between md:basis-3/5 md:flex-row md:gap-8">
+            {/* The heading */}
             <p className="text-gray-100 text-2xl">Ready to get started?</p>
+            {/* The button */}
             <WhiteButton.a className="rounded-lg px-4 py-3 w-full md:w-auto">
               Join to Easy Fluid
             </WhiteButton.a>
           </div>
         </div>
+        {/* The horizontal line */}
         <hr className="border-white border-t-[0.5px] opacity-10" />
+        {/* The main content of the footer */}
         <div className="flex flex-col-reverse md:flex-row items-center md:items-start md:justify-between gap-14">
+          {/* The newsletter subscription section */}
           <div className="flex flex-col gap-8 justify-between items-center lg:gap-4 md:items-start">
-            <p className="text-2xl text-gray-100">
-              Subscribe to our newsletter
-            </p>
+            {/* The heading */}
+            <p className="text-2xl text-gray-100">Subscribe to our newsletter</p>
+            {/* The input field and button */}
             <div>
               <input
                 type="text"
@@ -57,37 +70,47 @@ export const Footer = () => {
               </WhiteButton>
             </div>
           </div>
+          {/* The navigation links section */}
           <ul className="hidden md:flex md:flex-col md:gap-3">
+            {/* The navigation links */}
             {links.map((link) => (
-              <li key={link.label} className="text-gray-100">
+              <li key={link.label} className="text-gray-100 hover:text-white hover:drop-shadow-md transition-all">
                 <Link href={link.path}>{link.label}</Link>
               </li>
             ))}
           </ul>
+          {/* The contact information section */}
           <div className="flex flex-col justify-between gap-10">
+            {/* The location and phone number links */}
             <div className="flex flex-col gap-2">
-              <a className="flex gap-4 items-center" href="https://goo.gl/maps/TprgzrCYE4wpHHAd9" title="Location">
+              <a className="flex gap-4 items-center text-gray-300 hover:animate-jumper hover:text-white transition-colors" href="https://goo.gl/maps/TprgzrCYE4wpHHAd9" title="Location" target="_blank">
                 <Pin />
-                <p className="text-gray-300 font-light">
+                <p className="font-light">
                   Katusepapi 4, Tallinn, 11412
                 </p>
               </a>
-              <a className="flex gap-4 items-center" href="tel:+3726008211" title="Call us">
+              <a className="flex gap-4 items-center text-gray-300 hover:animate-jumper hover:text-white transition-colors" href="tel:+3726008211" title="Call us" target="_blank">
                 <Phone />
-                <p className="text-gray-300 font-light">+372 6008211</p>
+                <p className="font-light">+372 6008211</p>
               </a>
             </div>
+            {/* The social media links */}
             <div className="flex items-center justify-center gap-10">
               {media.map((social) => (
-                <a href={social.link} key={social.link}>
+                <a href={social.link} key={social.link} className="hover:animate-social" target="_blank">
                   {social.icon}
                 </a>
               ))}
             </div>
           </div>
         </div>
+        {/* The copyright and terms sections */}
         <div className="flex flex-col-reverse items-center gap-6 md:flex-row md:items-start justify-between md:gap-16 text-gray-100 pt-12">
-          <p className="text-[#AAA]">© {currentYear} EasyFluid. All rights reserved</p>
+          {/* The copyright */}
+          <p className="text-[#AAA]">
+            © {currentYear} EasyFluid. All rights reserved
+          </p>
+          {/* The terms and conditions and privacy policy links */}
           <span className="flex gap-6">
             <a href="#">Terms & Conditions</a>
             <a href="#">Privacy Policy</a>

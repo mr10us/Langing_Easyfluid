@@ -33,7 +33,7 @@ div {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: white
+  background: white;
 }
 
 @layer utilities {
@@ -42,12 +42,12 @@ body {
   }
 }
 .group {
-  -webkit-transition: .3s -webkit-filter linear;
--moz-transition: .3s -moz-filter linear;
--moz-transition: .3s filter linear;
--ms-transition: .3s -ms-filter linear;
--o-transition: .3s -o-filter linear;
-transition: .3s filter linear, .3s -webkit-filter linear;
+  -webkit-transition: 0.3s -webkit-filter linear;
+  -moz-transition: 0.3s -moz-filter linear;
+  -moz-transition: 0.3s filter linear;
+  -ms-transition: 0.3s -ms-filter linear;
+  -o-transition: 0.3s -o-filter linear;
+  transition: 0.3s filter linear, 0.3s -webkit-filter linear;
 }
 .group:hover .card:not(:hover) {
   filter: opacity(0.5);
@@ -82,5 +82,28 @@ transition: .3s filter linear, .3s -webkit-filter linear;
 @media (min-width: 768px) {
   .three_cards-width {
     width: calc((100% - 40px) / 3);
+  }
+}
+
+@keyframes jumper {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .animate-jumper > svg {
+    animation: jumper 0.3s cubic-bezier(1, 1, 0, 0) forwards;
+  }
+  .animate-social > svg > path,
+  .animate-social > svg > circle {
+    fill: #116acc;
+    transition: fill 150ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 }

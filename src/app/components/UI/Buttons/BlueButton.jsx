@@ -6,7 +6,7 @@ export const BlueButton = ({ children, onClick, style, className }) => {
     <button
       onClick={onClick}
       className={cn(
-        "bg-blue text-gray-100 text-xl font-medium px-4 py-2 rounded-xl",
+        "bg-blue text-gray-100 text-xl font-medium px-4 py-2 rounded-xl hover:bg-blue-light active:bg-blue-dark transition-colors duration-300",
         className
       )}
       style={style}
@@ -21,7 +21,7 @@ BlueButton.Link = ({ children, href, style, className }) => {
     <Link
       href={href}
       className={cn(
-        "bg-blue text-gray-100 text-xl font-medium px-4 py-2 rounded-xl",
+        "bg-blue text-gray-100 text-xl font-medium px-4 py-2 rounded-xl hover:bg-blue-light active:bg-blue-dark transition-colors duration-300",
         className
       )}
       style={style}
@@ -44,7 +44,7 @@ BlueButton.a = ({
       href={href}
       target="_blank"
       className={cn(
-        "bg-blue text-gray-100 text-xl font-medium px-4 py-2 rounded-xl flex transition-all duration-300 items-center gap-2 link cursor-pointer",
+        "bg-blue text-gray-100 text-xl font-medium px-4 py-2 rounded-xl flex hover:bg-blue-light active:bg-blue-dark transition-all duration-300 items-center gap-2 link cursor-pointer",
         className,
         block ? "w-full justify-center" : "w-max"
       )}

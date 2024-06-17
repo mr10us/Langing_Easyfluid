@@ -87,7 +87,7 @@ export const FeaturesSection = () => {
         </div>
         {/* Display a button to navigate to the EasyFluid platform */}
         <div className="w-full">
-          <BlueButton.a href="#" className="px-6 mx-auto" withArrow>Go to EasyFluid</BlueButton.a>
+          <BlueButton.a href="https://app.easyfluid.eu/" className="px-6 mx-auto" withArrow>Go to EasyFluid</BlueButton.a>
         </div>
       </MainWrapper>
     </SectionLayout>

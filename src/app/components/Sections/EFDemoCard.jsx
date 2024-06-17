@@ -48,7 +48,7 @@ export const EFDemoCard = () => {
             </span>
           ))}
         </div>
-        <BlueButton.a block withArrow>
+        <BlueButton.a block withArrow href="https://app.easyfluid.eu/">
           Go to EasyFluid
         </BlueButton.a>
       </div>

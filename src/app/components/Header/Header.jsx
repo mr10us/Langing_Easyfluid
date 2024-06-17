@@ -79,7 +79,7 @@ export const Header = () => {
           {/* The navigation links. */}
           <nav className="gap-4 items-center hidden head:flex">
             {links.map(({ label, path }) => (
-              <Link href={path} className="text-gray-100 px-4 py-2" key={label}>
+              <Link href={path} className="text-gray-100 px-4 py-2 hover:text-blue transition-all" key={label}>
                 {label}
               </Link>
             ))}

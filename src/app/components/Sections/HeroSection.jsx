@@ -51,7 +51,7 @@ export const HeroSection = () => {
               fluids, oils etc.
             </p>
             <div className="flex flex-row md:flex-col lg:flex-row gap-5 my-12">
-              <BlueButton>Go to EasyFluid</BlueButton>
+              <BlueButton.a href="https://app.easyfluid.eu/">Go to EasyFluid</BlueButton.a>
               <TransparentButton>Book a Demo!</TransparentButton>
             </div>
           </div>

@@ -19,7 +19,6 @@ export const metadata = {
   description:
     "EasyFluid is a web based service for monitoring your metalworking fluids, oils etc.",
   viewport: "width=device-width, initial-scale=1 user-scalable=no",
-  robots: "noindex, nofollow",
   icons: {
     icon: "/favicon.png",
     shortcut: ["/favicon-16x16.png", "/favicon-32x32.png"],

@@ -15,17 +15,16 @@ const inter = Inter({
 });
 
 export const metadata = {
+  // metadataBase: new URL("https://easyfluid.com"),
   title: "EasyFluid",
   description:
     "EasyFluid is a web based service for monitoring your metalworking fluids, oils etc.",
-  viewport: "width=device-width, initial-scale=1 user-scalable=no",
   robots: "noindex, nofollow",
   icons: {
     icon: "/favicon.png",
     shortcut: ["/favicon-16x16.png", "/favicon-32x32.png"],
     apple: "/apple-touch-icon.png",
   },
-  themeColor: "#ffffff",
   openGraph: {
     title: "EasyFluid",
     description:
@@ -48,6 +47,12 @@ export const metadata = {
       "EasyFluid is a web based service for monitoring your metalworking fluids, oils etc.",
     card: "summary",
   },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  userScalable: "no",
 };
 
 export default function RootLayout({ children }) {

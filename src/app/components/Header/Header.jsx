@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import Drawer from "../Drawer";
 import { WhiteButton } from "../UI/Buttons/WhiteButton";
 import { BurgerButton } from "../UI/Buttons/BurgerButton";
-import { ContactUsModal } from "../Modals/ContactUs";
+import { ContactUsModal } from "../Modals/ContactUsModal";
 
 /**
  * The Header component is the top navigation bar of the website.
@@ -109,7 +109,11 @@ export const Header = () => {
         </div>
       </MainWrapper>
       {/* The drawer component for mobile devices. */}
-      <Drawer isDrawerOpen={isDrawerOpen} toggleDrawer={toggleDrawer} toggleModal={toggleModal}/>
+      <Drawer
+        isDrawerOpen={isDrawerOpen}
+        toggleDrawer={toggleDrawer}
+        toggleModal={toggleModal}
+      />
       <ContactUsModal isOpen={isModalOpen} onClose={toggleModal} />
     </header>
   );

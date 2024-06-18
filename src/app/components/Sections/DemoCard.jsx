@@ -13,7 +13,7 @@ export const DemoCard = () => {
             <Typography className="text-gray">
             <span className="font-bold">Sure!</span> We will walk-through all the steps, show how it works and answer all your questions..
             </Typography>
-            <BlueButton.a className="lg:mx-0 mx-auto">Book a Demo!</BlueButton.a>
+            <BlueButton.a className="lg:mx-0 mx-auto" href="https://easycut.zohobookings.com/#/easyfluid">Book a Demo!</BlueButton.a>
           </div>
           <div className="relative hidden w-1/2 lg:block">
             <Image

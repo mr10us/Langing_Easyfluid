@@ -52,7 +52,7 @@ export const HeroSection = () => {
             </p>
             <div className="flex flex-row md:flex-col lg:flex-row gap-5 my-12">
               <BlueButton.a href="https://app.easyfluid.eu/">Go to EasyFluid</BlueButton.a>
-              <TransparentButton>Book a Demo!</TransparentButton>
+              <TransparentButton.a href="https://easycut.zohobookings.com/#/easyfluid">Book a Demo!</TransparentButton.a>
             </div>
           </div>
           <motion.div

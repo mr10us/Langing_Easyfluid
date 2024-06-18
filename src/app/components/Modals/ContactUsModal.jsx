@@ -1,35 +1,49 @@
 import Modal from "../Modal";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { z } from "zod";
 import { Typography } from "../UI/Typography";
 import { BlueButton } from "../UI/Buttons/BlueButton";
 import { AnimatePresence, motion } from "framer-motion";
+import { Loader } from "../Loader";
 
-const schema = z.object({
-  name: z.string().min(3, "Name is required"),
-  email: z.string().email("Invalid email address"),
-  message: z.string(),
-});
+// const schema = z.object({
+//   name: z.string().min(3, "Name is required"),
+//   email: z.string().email("Invalid email address"),
+//   message: z.string(),
+// });
 
-const popup = {
-  hidden: {
-    opacity: 0,
-    x: 40,
-  },
-  show: {
-    opacity: 1,
-    x: 0,
-    transition: { type: "spring", duration: 0.5, stiffness: 150, mass: 0.5 },
-  },
-  hide: {
-    opacity: 0,
-    x: -20,
-    transition: { type: "spring", duration: 0.5, },
-  },
-};
+// const popup = {
+//   hidden: {
+//     opacity: 0,
+//     x: 40,
+//   },
+//   show: {
+//     opacity: 1,
+//     x: 0,
+//     transition: { type: "spring", duration: 0.5, stiffness: 150, mass: 0.5 },
+//   },
+//   hide: {
+//     opacity: 0,
+//     x: -20,
+//     transition: { type: "spring", duration: 0.5, },
+//   },
+// };
 
 export const ContactUsModal = ({ isOpen, onClose }) => {
-  const [formData, setFormData] = useState({
+  return (
+    <Modal isOpen={isOpen} onClose={onClose}>
+        <iframe
+          ariaLabel="Get in touch!"
+          frameborder="0"
+          style={{ height: 500, width: "99%", border: "none" }}
+          src="https://forms.zohopublic.com/easycut/form/Getintouch/formperma/Kp71kdB60A8UPI5FTskmhwZ5XNczZ1iC03HZOElnsLQ"
+        ></iframe>
+    </Modal>
+  );
+};
+
+/** 
+ * const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
@@ -73,23 +87,7 @@ export const ContactUsModal = ({ isOpen, onClose }) => {
     }
   };
 
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-      document.documentElement.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-      document.documentElement.style.overflow = "auto";
-    }
-    return () => {
-      document.body.style.overflow = "auto";
-      document.documentElement.style.overflow = "auto";
-    };
-  }, [isOpen]);
-
-  return (
-    <Modal isOpen={isOpen} onClose={handleClose}>
-      <div className="w-full max-w-[400px] mx-auto text-center">
+ * <div className="w-full max-w-[400px] mx-auto text-center">
         <Typography.H2Bold className="text-gray-100">
           <span className="text-blue">Contact </span>us!
         </Typography.H2Bold>
@@ -173,6 +171,4 @@ export const ContactUsModal = ({ isOpen, onClose }) => {
           </BlueButton>
         </form>
       </div>
-    </Modal>
-  );
-};
+ */

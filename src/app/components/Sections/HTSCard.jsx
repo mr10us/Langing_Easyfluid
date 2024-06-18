@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { TextWrapper } from "@/app/layouts/TextWrapper";
 import { BlueButton } from "../UI/Buttons/BlueButton";
 import { SectionCard } from "@/app/layouts/SectionCard";
-import { ContactUsModal } from "../Modals/ContactUs";
+import { ContactUsModal } from "../Modals/ContactUsModal";
 
 export const HTSCard = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

@@ -24,7 +24,7 @@ export const BDCard = () => {
               No, you may opt in for just logging the data and monitoring your
               key indicators, setting aside deviation corrections calculations.
             </Typography>
-            <BlueButton.a block>Book a Demo!</BlueButton.a>
+            <BlueButton.a block href="https://easycut.zohobookings.com/#/easyfluid">Book a Demo!</BlueButton.a>
           </div>
         </SectionCard>
   );

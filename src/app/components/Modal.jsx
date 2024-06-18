@@ -27,11 +27,18 @@ const Modal = ({ isOpen, onClose, children }) => {
 
   // Add overflow:hidden to the body to prevent scrolling when the modal is open
   useEffect(() => {
-    document.body.style.overflow = "hidden";
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
+    }
     return () => {
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
     };
-  }, []);
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
@@ -51,16 +58,16 @@ const Modal = ({ isOpen, onClose, children }) => {
         animate="animate"
         exit="exit"
       >
-        <div className="relative bg-modal-gradient rounded-lg shadow-lg w-11/12 h-1/2 md:h-1/2 md:w-1/2 lg:w-1/3 lg:h-fit">
+        <div className="relative bg-white rounded-lg shadow-lg w-11/12 h-1/2 md:h-1/2 md:w-1/2 lg:w-1/3 lg:h-fit">
           <div className="absolute top-0 right-0 flex justify-end p-2">
             <button
               onClick={onClose}
-              className="text-gray-200 text-4xl font-light leading-[0.5] mr-4 mt-4 hover:text-white"
+              className="text-gray text-4xl font-light leading-[0.5] mr-4 mt-4 hover:text-black"
             >
               &times;
             </button>
           </div>
-          <div className="p-10 w-full h-full flex items-center">{children}</div>
+          <div className="w-full h-full flex items-center">{children}</div>
         </div>
       </motion.div>
     </AnimatePresence>

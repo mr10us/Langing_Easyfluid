@@ -45,7 +45,7 @@ export const Footer = () => {
             {/* The heading */}
             <p className="text-gray-100 text-2xl">Ready to get started?</p>
             {/* The button */}
-            <WhiteButton.a className="rounded-lg px-4 py-3 w-full md:w-auto">
+            <WhiteButton.a href="https://app.easyfluid.eu/" className="rounded-lg px-4 py-3 w-full md:w-auto">
               Join to Easy Fluid
             </WhiteButton.a>
           </div>

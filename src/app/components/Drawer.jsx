@@ -12,7 +12,7 @@ import links from "@/app/nav.json";
  * @param {Function} props.toggleDrawer - Function to toggle the drawer.
  * @returns {JSX.Element} The Drawer component.
  */
-const Drawer = ({ isDrawerOpen, toggleDrawer }) => {
+const Drawer = ({ isDrawerOpen, toggleDrawer, toggleModal }) => {
   // Reference to the drawer element.
   const drawerRef = useRef(null);
 
@@ -46,7 +46,7 @@ const Drawer = ({ isDrawerOpen, toggleDrawer }) => {
               </Link>
             ))}
             {/* Add a "Contact Us" button. */}
-            <WhiteButton className="px-5 py-2 rounded-[30px] w-fit">
+            <WhiteButton className="px-5 py-2 rounded-[30px] w-fit" onClick={toggleModal}>
               Contact Us
             </WhiteButton>
           </nav>

@@ -8,6 +8,6 @@ export const WhiteButton = ({children, onClick, style, className}) => {
 
 WhiteButton.a = ({children, href = "#", style, className}) => {
   return (
-    <button href={href} className={cn("bg-gray-100 text-gray-dark hover:bg-white active:bg-opacity-70 transition-all duration-300", className)} style={style}>{children}</button>
+    <a href={href} target="_blank" className={cn("text-center bg-gray-100 text-gray-dark hover:bg-white active:bg-opacity-70 transition-all duration-300", className)} style={style}>{children}</a>
   )
 }

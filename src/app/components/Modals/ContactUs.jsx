@@ -3,22 +3,28 @@ import { useEffect, useState } from "react";
 import { z } from "zod";
 import { Typography } from "../UI/Typography";
 import { BlueButton } from "../UI/Buttons/BlueButton";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const schema = z.object({
   name: z.string().min(3, "Name is required"),
   email: z.string().email("Invalid email address"),
+  message: z.string(),
 });
 
 const popup = {
   hidden: {
     opacity: 0,
-    x: -20,
+    x: 40,
   },
   show: {
     opacity: 1,
     x: 0,
-    transition: { type: "spring", duration: 0.5 },
+    transition: { type: "spring", duration: 0.5, stiffness: 150, mass: 0.5 },
+  },
+  hide: {
+    opacity: 0,
+    x: -20,
+    transition: { type: "spring", duration: 0.5, },
   },
 };
 
@@ -39,6 +45,16 @@ export const ContactUsModal = ({ isOpen, onClose }) => {
     });
   };
 
+  const handleClose = () => {
+    setErrors({});
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
+    onClose();
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const result = schema.safeParse(formData);
@@ -48,6 +64,9 @@ export const ContactUsModal = ({ isOpen, onClose }) => {
         return acc;
       }, {});
       setErrors(errorMessages);
+      setTimeout(() => {
+        setErrors({});
+      }, 3000);
     } else {
       setErrors({});
       console.log("Form submitted successfully:", formData);
@@ -56,14 +75,20 @@ export const ContactUsModal = ({ isOpen, onClose }) => {
 
   useEffect(() => {
     if (isOpen) {
-      document.body.overflow = "hidden";
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
     } else {
-      document.body.overflow = "auto";
+      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
     }
-  }, [isOpen])
+    return () => {
+      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
+    };
+  }, [isOpen]);
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
+    <Modal isOpen={isOpen} onClose={handleClose}>
       <div className="w-full max-w-[400px] mx-auto text-center">
         <Typography.H2Bold className="text-gray-100">
           <span className="text-blue">Contact </span>us!
@@ -77,7 +102,7 @@ export const ContactUsModal = ({ isOpen, onClose }) => {
         >
           <div className="w-full">
             <input
-              className="w-full bg-transparent py-3 px-4 text-gray-200 border border-gray-400 rounded-xl"
+              className={`w-full bg-transparent py-3 px-4 text-gray-200 border border-gray-400 rounded-xl ${errors.name ? "border-red-500 text-red-500" : ""}`}
               type="text"
               id="name"
               name="name"
@@ -85,25 +110,28 @@ export const ContactUsModal = ({ isOpen, onClose }) => {
               value={formData.name}
               onChange={handleChange}
             />
-            {errors.name && (
-              <motion.p
-                variants={popup}
-                hidden="hidden"
-                animate="show"
-                style={{
-                  color: "red",
-                  textAlign: "left",
-                  marginLeft: "10px",
-                  marginTop: "2px",
-                }}
-              >
-                {errors.name}
-              </motion.p>
-            )}
+            <AnimatePresence>
+              {errors.name ? (
+                <motion.div
+                  style={{
+                    color: "red",
+                    textAlign: "left",
+                    marginLeft: "10px",
+                    marginTop: "2px",
+                  }}
+                  variants={popup}
+                  initial="hidden"
+                  animate="show"
+                  exit="hide"
+                >
+                  <p>{errors.name}</p>
+                </motion.div>
+              ) : null}
+            </AnimatePresence>
           </div>
           <div className="w-full">
             <input
-              className="w-full bg-transparent py-3 px-4 text-gray-200 border border-gray-400 rounded-xl"
+              className={`w-full bg-transparent py-3 px-4 text-gray-200 border border-gray-400 rounded-xl ${errors.email ? "border-red-500 text-red-500" : ""}`}
               type="email"
               id="email"
               name="email"
@@ -111,21 +139,24 @@ export const ContactUsModal = ({ isOpen, onClose }) => {
               value={formData.email}
               onChange={handleChange}
             />
-            {errors.email && (
-              <motion.p
-                variants={popup}
-                hidden="hidden"
-                animate="show"
+            <AnimatePresence>
+            {errors.email ? (
+              <motion.div
                 style={{
                   color: "red",
                   textAlign: "left",
                   marginLeft: "10px",
                   marginTop: "2px",
                 }}
+                variants={popup}
+                initial="hidden"
+                animate="show"
+                exit="hide"
               >
-                {errors.email}
-              </motion.p>
-            )}
+                <p>{errors.email}</p>
+              </motion.div>
+            ) : null}
+            </AnimatePresence>
           </div>
           <div className="w-full">
             <textarea

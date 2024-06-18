@@ -8,7 +8,6 @@ import { useEffect, useState } from "react";
 import Drawer from "../Drawer";
 import { WhiteButton } from "../UI/Buttons/WhiteButton";
 import { BurgerButton } from "../UI/Buttons/BurgerButton";
-import Modal from "../Modal";
 import { ContactUsModal } from "../Modals/ContactUs";
 
 /**
@@ -110,7 +109,7 @@ export const Header = () => {
         </div>
       </MainWrapper>
       {/* The drawer component for mobile devices. */}
-      <Drawer isDrawerOpen={isDrawerOpen} toggleDrawer={toggleDrawer} />
+      <Drawer isDrawerOpen={isDrawerOpen} toggleDrawer={toggleDrawer} toggleModal={toggleModal}/>
       <ContactUsModal isOpen={isModalOpen} onClose={toggleModal} />
     </header>
   );

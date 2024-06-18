@@ -1,8 +1,18 @@
+"use client";
+
+import React, { useState } from "react";
 import { TextWrapper } from "@/app/layouts/TextWrapper";
 import { BlueButton } from "../UI/Buttons/BlueButton";
 import { SectionCard } from "@/app/layouts/SectionCard";
+import { ContactUsModal } from "../Modals/ContactUs";
 
 export const HTSCard = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen((prev) => !prev);
+  };
+
   return (
     <SectionCard
       style={{ backgroundImage: "url('/bg-2.svg')", backgroundSize: "cover" }}
@@ -18,10 +28,11 @@ export const HTSCard = () => {
           and you are good to go! We will walk-through all the steps, show how
           it works and answer all your questions.
         </p>
-        <BlueButton.a style={{ width: "60%", justifyContent: "center" }}>
+        <BlueButton style={{ width: "60%", justifyContent: "center" }} onClick={toggleModal}>
           Contact Us
-        </BlueButton.a>
+        </BlueButton>
       </TextWrapper>
+      <ContactUsModal isOpen={isModalOpen} onClose={toggleModal} />
     </SectionCard>
   );
 };

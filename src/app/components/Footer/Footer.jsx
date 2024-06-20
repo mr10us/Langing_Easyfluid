@@ -68,7 +68,7 @@ export const Footer = () => {
                 key={link.label}
                 className="text-gray-100 hover:text-white hover:drop-shadow-md transition-all"
               >
-                <Link href={link.path}>{link.label}</Link>
+                <Link href={link.path} alt={link.label}>{link.label}</Link>
               </li>
             ))}
           </ul>

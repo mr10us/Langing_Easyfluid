@@ -12,9 +12,9 @@ import React from "react";
 import { NewsletterForm } from "../NewsletterForm";
 
 const media = [
-  { icon: <Facebook />, link: "https://www.facebook.com/" },
-  { icon: <Twitter />, link: "https://twitter.com" },
-  { icon: <Instagram />, link: "https://www.instagram.com" },
+  { icon: <Facebook />, link: "https://www.facebook.com/", label: "Facebook" },
+  { icon: <Twitter />, link: "https://twitter.com", label: "Twitter" },
+  { icon: <Instagram />, link: "https://www.instagram.com", label: "Instagram" },
 ];
 
 const currentYear = new Date().getFullYear();
@@ -103,6 +103,7 @@ export const Footer = () => {
                   key={social.link}
                   className="hover:animate-social"
                   target="_blank"
+                  alt={social.label}
                 >
                   {social.icon}
                 </a>

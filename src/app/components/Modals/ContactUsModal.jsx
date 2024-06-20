@@ -5,6 +5,7 @@ import { Typography } from "../UI/Typography";
 import { BlueButton } from "../UI/Buttons/BlueButton";
 import { AnimatePresence, motion } from "framer-motion";
 import { Loader } from "../Loader";
+import { formPopup } from "@/app/animations/Form";
 
 // const schema = z.object({
 //   name: z.string().min(3, "Name is required"),
@@ -12,24 +13,24 @@ import { Loader } from "../Loader";
 //   message: z.string(),
 // });
 
-// const popup = {
-//   hidden: {
-//     opacity: 0,
-//     x: 40,
-//   },
-//   show: {
-//     opacity: 1,
-//     x: 0,
-//     transition: { type: "spring", duration: 0.5, stiffness: 150, mass: 0.5 },
-//   },
-//   hide: {
-//     opacity: 0,
-//     x: -20,
-//     transition: { type: "spring", duration: 0.5, },
-//   },
-// };
-
 export const ContactUsModal = ({ isOpen, onClose }) => {
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
+    };
+  }, [isOpen]);
+
+  if (!isOpen) return null;
+  
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
         <iframe
@@ -117,7 +118,7 @@ export const ContactUsModal = ({ isOpen, onClose }) => {
                     marginLeft: "10px",
                     marginTop: "2px",
                   }}
-                  variants={popup}
+                  variants={formPopup}
                   initial="hidden"
                   animate="show"
                   exit="hide"
@@ -146,7 +147,7 @@ export const ContactUsModal = ({ isOpen, onClose }) => {
                   marginLeft: "10px",
                   marginTop: "2px",
                 }}
-                variants={popup}
+                variants={formPopup}
                 initial="hidden"
                 animate="show"
                 exit="hide"

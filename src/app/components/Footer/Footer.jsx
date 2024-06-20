@@ -9,6 +9,7 @@ import Facebook from "../../../../public/facebook.svg";
 import Twitter from "../../../../public/twitter.svg";
 import Instagram from "../../../../public/instagram.svg";
 import React from "react";
+import { NewsletterForm } from "../NewsletterForm";
 
 const media = [
   { icon: <Facebook />, link: "https://www.facebook.com/" },
@@ -30,7 +31,7 @@ export const Footer = () => {
         {/* The main content of the footer */}
         <div className="flex gap-12 md:justify-between items-center">
           {/* The logo link */}
-          <Link href="#hero" className="w-20">
+          <Link href="#hero" className="w-48 md:w-20">
             <Image
               className="h-auto"
               src="/logo.png"
@@ -45,7 +46,10 @@ export const Footer = () => {
             {/* The heading */}
             <p className="text-gray-100 text-2xl">Ready to get started?</p>
             {/* The button */}
-            <WhiteButton.a href="https://app.easyfluid.eu/" className="rounded-lg px-4 py-3 w-full md:w-auto">
+            <WhiteButton.a
+              href="https://app.easyfluid.eu/"
+              className="rounded-lg px-4 py-3 w-full md:w-auto"
+            >
               Join to Easy Fluid
             </WhiteButton.a>
           </div>
@@ -55,26 +59,15 @@ export const Footer = () => {
         {/* The main content of the footer */}
         <div className="flex flex-col-reverse md:flex-row items-center md:items-start md:justify-between gap-14">
           {/* The newsletter subscription section */}
-          <div className="flex flex-col gap-8 justify-between items-center lg:gap-4 md:items-start">
-            {/* The heading */}
-            <p className="text-2xl text-gray-100">Subscribe to our newsletter</p>
-            {/* The input field and button */}
-            <div>
-              <input
-                type="text"
-                placeholder="Email address"
-                className="outline-none bg-transparent border-b border-white border-opacity-10 text-[15px] p-4 text-gray-100"
-              />
-              <WhiteButton className="px-6 py-4 rounded-t-lg">
-                &#10095;
-              </WhiteButton>
-            </div>
-          </div>
+          <NewsletterForm />
           {/* The navigation links section */}
           <ul className="hidden md:flex md:flex-col md:gap-3">
             {/* The navigation links */}
             {links.map((link) => (
-              <li key={link.label} className="text-gray-100 hover:text-white hover:drop-shadow-md transition-all">
+              <li
+                key={link.label}
+                className="text-gray-100 hover:text-white hover:drop-shadow-md transition-all"
+              >
                 <Link href={link.path}>{link.label}</Link>
               </li>
             ))}
@@ -83,13 +76,21 @@ export const Footer = () => {
           <div className="flex flex-col justify-between gap-10">
             {/* The location and phone number links */}
             <div className="flex flex-col gap-2">
-              <a className="flex gap-4 items-center text-gray-300 hover:animate-jumper hover:text-white transition-colors" href="https://goo.gl/maps/TprgzrCYE4wpHHAd9" title="Location" target="_blank">
+              <a
+                className="flex gap-4 items-center text-gray-300 hover:animate-jumper hover:text-white transition-colors"
+                href="https://goo.gl/maps/TprgzrCYE4wpHHAd9"
+                title="Location"
+                target="_blank"
+              >
                 <Pin />
-                <p className="font-light">
-                  Katusepapi 4, Tallinn, 11412
-                </p>
+                <p className="font-light">Katusepapi 4, Tallinn, 11412</p>
               </a>
-              <a className="flex gap-4 items-center text-gray-300 hover:animate-jumper hover:text-white transition-colors" href="tel:+3726008211" title="Call us" target="_blank">
+              <a
+                className="flex gap-4 items-center text-gray-300 hover:animate-jumper hover:text-white transition-colors"
+                href="tel:+3726008211"
+                title="Call us"
+                target="_blank"
+              >
                 <Phone />
                 <p className="font-light">+372 6008211</p>
               </a>
@@ -97,7 +98,12 @@ export const Footer = () => {
             {/* The social media links */}
             <div className="flex items-center justify-center gap-10">
               {media.map((social) => (
-                <a href={social.link} key={social.link} className="hover:animate-social" target="_blank">
+                <a
+                  href={social.link}
+                  key={social.link}
+                  className="hover:animate-social"
+                  target="_blank"
+                >
                   {social.icon}
                 </a>
               ))}

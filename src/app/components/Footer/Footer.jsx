@@ -104,6 +104,7 @@ export const Footer = () => {
                   className="hover:animate-social"
                   target="_blank"
                   alt={social.label}
+                  title={social.label}
                 >
                   {social.icon}
                 </a>

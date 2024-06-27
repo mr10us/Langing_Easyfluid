@@ -93,7 +93,7 @@ export const FeaturesSection = () => {
             <BlueButton.a href="https://forms.zohopublic.com/easycut/form/Getintouch/formperma/Kp71kdB60A8UPI5FTskmhwZ5XNczZ1iC03HZOElnsLQ" block className="md:w-[calc(50%-20px)]">
               Get in Touch!
             </BlueButton.a>
-            <TransparentButton.a href="https://easycut.zohobookings.com/#/easyfluid" className="bg-gray-400 md:w-[calc(50%-20px)]">
+            <TransparentButton.a href="https://easycut.zohobookings.com/#/easyfluid" className="!bg-gray-400 hover:border-gray-400 md:w-[calc(50%-20px)]">
               Book a Demo!
             </TransparentButton.a>
           </div>

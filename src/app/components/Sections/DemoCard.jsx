@@ -24,7 +24,7 @@ export const DemoCard = () => {
           </BlueButton.a>
           <TransparentButton.a
             href="https://easycut.zohobookings.com/#/easyfluid"
-            className="bg-gray-400 hover:border-gray-400"
+            className="!bg-gray-400 hover:border-gray-400"
           >
             Book a Demo!
           </TransparentButton.a>

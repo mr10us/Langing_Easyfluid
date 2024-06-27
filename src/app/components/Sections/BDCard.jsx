@@ -35,7 +35,7 @@ export const BDCard = () => {
           </BlueButton.a>
           <TransparentButton.a
             href="https://easycut.zohobookings.com/#/easyfluid"
-            className="bg-gray-400 hover:border-gray-400 md:w-[calc(50%-20px)]"
+            className="!bg-gray-400 hover:border-gray-400 md:w-[calc(50%-20px)]"
           >
             Book a Demo!
           </TransparentButton.a>

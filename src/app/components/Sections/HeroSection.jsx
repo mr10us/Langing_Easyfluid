@@ -124,7 +124,7 @@ export const HeroSection = () => {
               />
             </motion.div>
             <motion.div
-              className="absolute top-1/4 left-0 scale-125 md:-left-28 md:top-28 md:scale-0 lg:-left-40"
+              className="absolute top-1/4 left-0 scale-125 md:-left-28 md:top-28 md:scale-0 lg:-left-34"
               style={{
                 zIndex: 12,
                 ...(isMobile

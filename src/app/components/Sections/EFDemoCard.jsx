@@ -5,6 +5,7 @@ import Image from "next/image";
 import Done from "../../../../public/done.svg";
 import { BlueButton } from "../UI/Buttons/BlueButton";
 import useIsMobile from "@/app/hooks/useIsMobile";
+import { TransparentButton } from "../UI/Buttons/TransparentButton";
 
 const benefits = [
   "you save on cutting fluid concentrate when you need to add water",
@@ -16,7 +17,7 @@ export const EFDemoCard = () => {
 
   return (
     <SectionCard
-      className="flex flex-col lg:flex-row gap-8 py-[90px] px-[50px] justify-center items-center"
+      className="flex flex-col lg:flex-row gap-8 py-14 md:py-[90px] px-[50px] justify-center items-center"
       style={{
         backgroundColor: "#00346E",
         backgroundImage: "url(/EFDemoBG.svg)",
@@ -48,9 +49,21 @@ export const EFDemoCard = () => {
             </span>
           ))}
         </div>
-        <BlueButton.a block withArrow href="https://app.easyfluid.eu/">
-          Go to EasyFluid
-        </BlueButton.a>
+        <div className="flex justify-center flex-col sm:flex-row gap-5 mt-12">
+          <BlueButton.a
+            href="https://forms.zohopublic.com/easycut/form/Getintouch/formperma/Kp71kdB60A8UPI5FTskmhwZ5XNczZ1iC03HZOElnsLQ"
+            block
+            className="md:w-[calc(50%-20px)]"
+          >
+            Get in Touch!
+          </BlueButton.a>
+          <TransparentButton.a
+            href="https://easycut.zohobookings.com/#/easyfluid"
+            className="md:w-[calc(50%-20px)]"
+          >
+            Book a Demo!
+          </TransparentButton.a>
+        </div>
       </div>
       {isMobile ? null : <Pseudo3DImage />}
     </SectionCard>

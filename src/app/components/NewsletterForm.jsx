@@ -62,8 +62,6 @@ export const NewsletterForm = () => {
                 fontFamily: "Arial",
                 borderWidth: "4px 1px 1px",
                 borderStyle: "solid",
-                borderColor:
-                  "rgb(255, 96, 93) rgb(235, 235, 235) rgb(235, 235, 235)",
                 overflow: "hidden",
               }}
               name="SIGNUP_BODY"

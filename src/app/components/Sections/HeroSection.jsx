@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from "react";
 import Image from "next/image";
@@ -50,9 +50,13 @@ export const HeroSection = () => {
               EasyFluid is a web based service for monitoring your metalworking
               fluids, oils etc.
             </p>
-            <div className="flex flex-row md:flex-col lg:flex-row gap-5 my-12">
-              <BlueButton.a href="https://app.easyfluid.eu/">Go to EasyFluid</BlueButton.a>
-              <TransparentButton.a href="https://easycut.zohobookings.com/#/easyfluid">Book a Demo!</TransparentButton.a>
+            <div className="flex flex-row w-full md:flex-col md:w-full lg:flex-row gap-5 my-12">
+              <BlueButton.a href="https://forms.zohopublic.com/easycut/form/Getintouch/formperma/Kp71kdB60A8UPI5FTskmhwZ5XNczZ1iC03HZOElnsLQ" block>
+                Get in Touch!
+              </BlueButton.a>
+              <TransparentButton.a href="https://easycut.zohobookings.com/#/easyfluid">
+                Book a Demo!
+              </TransparentButton.a>
             </div>
           </div>
           <motion.div

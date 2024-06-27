@@ -47,10 +47,10 @@ export const Footer = () => {
             <p className="text-gray-100 text-2xl">Ready to get started?</p>
             {/* The button */}
             <WhiteButton.a
-              href="https://app.easyfluid.eu/"
+              href="https://app.easyfluid.eu/login"
               className="rounded-lg px-4 py-3 w-full md:w-auto"
             >
-              Join to Easy Fluid
+              Join EasyFluid
             </WhiteButton.a>
           </div>
         </div>

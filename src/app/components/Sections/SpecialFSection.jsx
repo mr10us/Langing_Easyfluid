@@ -72,7 +72,7 @@ export const SpecialFSection = () => {
             <Typography.H2Bold className="text-gray-dark w-3/4 text-center mx-auto mb-10">
               {/* Heading with blue text "special features" */}
               Some <span className="text-blue">special features</span> that
-              relate to cutting fluids
+              relate to metalworking fluids
             </Typography.H2Bold>
             {/* Map over blockOne array to display Typography components */}
             {blockOne.map((item, index) => (

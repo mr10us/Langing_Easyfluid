@@ -18,7 +18,7 @@ export const HTSCard = () => {
       style={{ backgroundImage: "url('/bg-2.svg')", backgroundSize: "cover" }}
       id="contacts"
     >
-      <TextWrapper className="py-20 flex flex-col gap-4 items-center">
+      <TextWrapper className="py-10 md:py-16 flex flex-col gap-4 items-center">
         <h2 className="font-medium h2 text-gray-100 text-center w-11/12 lg:w-full">
           Well, sounds good. How to start?
         </h2>

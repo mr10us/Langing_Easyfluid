@@ -18,7 +18,7 @@ const cards = [
     icon: <PasscodeLock />,
     iconColor: "#67D744",
     title: "Reduce spendings",
-    content: "on fluids",
+    content: "on fluids, make your business more efficient",
   },
   {
     icon: <HeartHandshake />,

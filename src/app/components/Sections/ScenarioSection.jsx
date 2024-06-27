@@ -188,7 +188,7 @@ const ScenarioTwo = () => {
     <TextWrapper className="flex gap-6 flex-col items-center">
       {/* Heading */}
       <Typography.H2Medium className="text-gray-dark text-2xl">
-        Scenario 2: opposite
+        Scenario 2
       </Typography.H2Medium>
       {/* Description */}
       <p className="font-bold text-2xl text-gray text-center">

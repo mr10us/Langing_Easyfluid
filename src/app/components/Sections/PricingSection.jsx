@@ -8,14 +8,14 @@ import Graph from "../../../../public/graph.svg";
 
 const cards = [
   {
-    title: "Rate per machine added",
-    price: "5,00 €",
+    title: "Rate per machine added per month",
+    price: "€4.90",
     content: "incl.EasyFluid remote monitoring.",
     icon: <Lock />,
   },
   {
     title: "Flat rate per company",
-    price: "19,90 €",
+    price: "€19.90 ",
     content: "per month per company.",
     icon: <Graph />,
   },
@@ -34,7 +34,7 @@ export const PricingSection = () => {
               style={{ borderRadius: 30 }}
               key={card.title}
             >
-              <div className="w-3/4 flex flex-col gap-4">
+              <div className="w-3/4 grid grid-rows-[1fr_1fr_auto] grid-cols-1 gap-4 h-full">
                 <p className="text-3xl font-light">{card.title}</p>
                 <h2 className="text-[47px] font-bold font-inter text-gray-dark">
                   {card.price}

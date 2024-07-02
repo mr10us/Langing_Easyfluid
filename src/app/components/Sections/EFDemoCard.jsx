@@ -6,6 +6,8 @@ import Done from "../../../../public/done.svg";
 import { BlueButton } from "../UI/Buttons/BlueButton";
 import useIsMobile from "@/app/hooks/useIsMobile";
 import { TransparentButton } from "../UI/Buttons/TransparentButton";
+import { useState } from "react";
+import { ContactUsModal } from "../Modals/ContactUsModal";
 
 const benefits = [
   "you save on cutting fluid concentrate when you need to add water",
@@ -14,6 +16,12 @@ const benefits = [
 
 export const EFDemoCard = () => {
   const isMobile = useIsMobile();
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen((prev) => !prev);
+  };
 
   return (
     <SectionCard
@@ -49,14 +57,15 @@ export const EFDemoCard = () => {
             </span>
           ))}
         </div>
-        <div className="flex justify-center flex-col sm:flex-row gap-5 mt-12">
-          <BlueButton.a
-            href="https://forms.zohopublic.com/easycut/form/Getintouch/formperma/Kp71kdB60A8UPI5FTskmhwZ5XNczZ1iC03HZOElnsLQ"
+        <div className="flex items-center justify-center flex-col sm:flex-row gap-5 mt-12">
+          <BlueButton
+            onClick={toggleModal}
             block
             className="md:w-[calc(50%-20px)]"
           >
             Get in Touch!
-          </BlueButton.a>
+          </BlueButton>
+          <span className="hidden text-gray-200 sm:block">or</span>
           <TransparentButton.a
             href="https://easycut.zohobookings.com/#/easyfluid"
             className="md:w-[calc(50%-20px)]"
@@ -66,6 +75,7 @@ export const EFDemoCard = () => {
         </div>
       </div>
       {isMobile ? null : <Pseudo3DImage />}
+      <ContactUsModal isOpen={isModalOpen} onClose={toggleModal} />
     </SectionCard>
   );
 };

@@ -5,7 +5,6 @@ import React from "react";
 import Lock from "../../../../public/lock.svg";
 import Graph from "../../../../public/graph.svg";
 
-
 const cards = [
   {
     title: "Rate per machine added per month",
@@ -45,6 +44,11 @@ export const PricingSection = () => {
             </Card>
           ))}
         </div>
+        <Card className="mx-auto w-11/12 bg-white card" showAnim style={{borderRadius: 20}}>
+          <p className="text-center font-inter text-xl text-gray">
+            or enjou 10% off discount for annual subscription.
+          </p>
+        </Card>
       </MainWrapper>
     </SectionLayout>
   );

@@ -5,6 +5,7 @@ import { TextWrapper } from "@/app/layouts/TextWrapper";
 import { BlueButton } from "../UI/Buttons/BlueButton";
 import { SectionCard } from "@/app/layouts/SectionCard";
 import { ContactUsModal } from "../Modals/ContactUsModal";
+import { TransparentButton } from "../UI/Buttons/TransparentButton";
 
 export const HTSCard = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -28,9 +29,19 @@ export const HTSCard = () => {
           and you are good to go! We will walk-through all the steps, show how
           it works and answer all your questions.
         </p>
-        <BlueButton style={{ width: "60%", justifyContent: "center" }} onClick={toggleModal}>
-          Contact Us
-        </BlueButton>
+        <div
+        className="flex items-center justify-center flex-col sm:flex-row gap-3 w-3/5">
+          <BlueButton className="w-full" onClick={toggleModal}>
+            Contact Us
+          </BlueButton>
+          <span className="hidden text-gray-200 sm:block">or</span>
+          <TransparentButton.a
+            href="https://easycut.zohobookings.com/#/easyfluid"
+            className="!w-full !bg-gray-400 border-transparent hover:border-gray-400 md:w-[calc(50%-20px)]"
+          >
+            Book a Demo!
+          </TransparentButton.a>
+        </div>
       </TextWrapper>
       <ContactUsModal isOpen={isModalOpen} onClose={toggleModal} />
     </SectionCard>

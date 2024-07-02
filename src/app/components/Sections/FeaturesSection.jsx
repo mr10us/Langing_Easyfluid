@@ -1,9 +1,13 @@
+"use client"
+
 import { MainWrapper } from "@/app/layouts/MainWrapper";
 import { SectionLayout } from "@/app/layouts/SectionLayout";
 import { Typography } from "../UI/Typography";
 import { Card } from "../UI/Card";
 import { BlueButton } from "../UI/Buttons/BlueButton";
 import { TransparentButton } from "../UI/Buttons/TransparentButton";
+import { useState } from "react";
+import { ContactUsModal } from "../Modals/ContactUsModal";
 
 const cards = [
   {
@@ -43,6 +47,12 @@ const cards = [
  * @returns {JSX.Element} The FeaturesSection component
  */
 export const FeaturesSection = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen((prev) => !prev);
+  };
+
   return (
     // Wrap the section in a layout component
     <SectionLayout
@@ -89,15 +99,17 @@ export const FeaturesSection = () => {
           ))}
         </div>
         {/* Display a button to navigate to the EasyFluid platform */}
-          <div className="flex justify-between flex-col sm:flex-row gap-5 my-12">
-            <BlueButton.a href="https://forms.zohopublic.com/easycut/form/Getintouch/formperma/Kp71kdB60A8UPI5FTskmhwZ5XNczZ1iC03HZOElnsLQ" block className="md:w-[calc(50%-20px)]">
+          <div className="flex items-center justify-between flex-col sm:flex-row gap-5 my-12">
+            <BlueButton block className="md:w-[calc(50%-20px)]" onClick={toggleModal}>
               Get in Touch!
-            </BlueButton.a>
+            </BlueButton>
+            <span className="hidden text-gray-dark sm:block">or</span>
             <TransparentButton.a href="https://easycut.zohobookings.com/#/easyfluid" className="!bg-gray-400 hover:border-gray-400 md:w-[calc(50%-20px)]">
               Book a Demo!
             </TransparentButton.a>
           </div>
       </MainWrapper>
+      <ContactUsModal isOpen={isModalOpen} onClose={toggleModal}/>
     </SectionLayout>
   );
 };

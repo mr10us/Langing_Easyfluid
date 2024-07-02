@@ -60,7 +60,8 @@ export const NewsletterForm = () => {
                 backgroundColor: "rgb(7, 59, 108)",
                 zIndex: 2,
                 fontFamily: "Arial",
-                borderWidth: "4px 1px 1px",
+                borderWidth: 1,
+                borderRadius: 10,
                 borderStyle: "solid",
                 overflow: "hidden",
               }}
@@ -244,7 +245,7 @@ export const NewsletterForm = () => {
                         outline: "currentcolor",
                         fontSize: 14,
                         backgroundColor: "rgb(255, 255, 255)",
-                        borderRadius: 0,
+                        borderRadius: 5,
                       }}
                       name="SIGNUP_SUBMIT_BUTTON"
                       id="zcWebOptin"

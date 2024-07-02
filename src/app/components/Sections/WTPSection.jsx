@@ -10,7 +10,7 @@ const cards = [
   {
     icon: <ArrowsIcon />,
     iconColor: "#116ACC",
-    title: "To provide",
+    title: "Provide",
     content:
       "customers with complete control of what’s going on with your fluids",
   },
@@ -46,7 +46,7 @@ export const WTPSection = () => {
               What’s the point?
             </Typography.H2Bold>
             <Typography.P18 className="text-gray-100">
-              The goal of the service is:
+              The goal of the service is to:
             </Typography.P18>
           </div>
         </MainWrapper>

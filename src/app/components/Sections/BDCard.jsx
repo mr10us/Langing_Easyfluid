@@ -1,10 +1,20 @@
+"use client";
+
 import Image from "next/image";
 import { Typography } from "../UI/Typography";
 import { BlueButton } from "../UI/Buttons/BlueButton";
 import { SectionCard } from "@/app/layouts/SectionCard";
 import { TransparentButton } from "../UI/Buttons/TransparentButton";
+import { ContactUsModal } from "../Modals/ContactUsModal";
+import { useState } from "react";
 
 export const BDCard = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen((prev) => !prev);
+  };
+
   return (
     <SectionCard className=" overflow-hidden flex flex-col-reverse md:flex-row gap-6 md:justify-between bg-bd-gradient px-10 md:px-0 md:pr-20">
       <div className="md:w-1/2 w-full relative h-[250px]">
@@ -25,22 +35,23 @@ export const BDCard = () => {
           No, you may opt in for just logging the data and monitoring your key
           indicators, setting aside deviation corrections calculations.
         </Typography>
-        <div className="flex justify-center flex-col sm:flex-row gap-5 mt-12">
-          <BlueButton.a
-            href="https://forms.zohopublic.com/easycut/form/Getintouch/formperma/Kp71kdB60A8UPI5FTskmhwZ5XNczZ1iC03HZOElnsLQ"
+        <div className="flex items-center justify-center flex-col lg:flex-row gap-5 mt-12">
+          <BlueButton onClick={toggleModal}
             block
-            className="md:w-[calc(50%-20px)]"
+            className="w-full lg:w-[calc(50%-20px)]"
           >
             Get in Touch!
-          </BlueButton.a>
+          </BlueButton>
+          <span className="hidden text-gray-dark lg:block">or</span>
           <TransparentButton.a
             href="https://easycut.zohobookings.com/#/easyfluid"
-            className="!bg-gray-400 hover:border-gray-400 md:w-[calc(50%-20px)]"
+            className="w-full text-center !bg-gray-400 hover:border-gray-400 lg:w-[calc(50%-20px)]"
           >
             Book a Demo!
           </TransparentButton.a>
         </div>
       </div>
+      <ContactUsModal isOpen={isModalOpen} onClose={toggleModal} />
     </SectionCard>
   );
 };

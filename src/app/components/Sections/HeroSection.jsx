@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { MainWrapper } from "../../layouts/MainWrapper";
 import { SectionLayout } from "../../layouts/SectionLayout";
@@ -15,6 +15,7 @@ import {
 } from "@/app/animations/HeroSection";
 import useScrollAnimations from "@/app/hooks/useScrollAnimations";
 import useIsMobile from "@/app/hooks/useIsMobile";
+import { ContactUsModal } from "../Modals/ContactUsModal";
 
 export const HeroSection = () => {
   const {
@@ -29,6 +30,12 @@ export const HeroSection = () => {
     manThreeX,
   } = useScrollAnimations();
   const isMobile = useIsMobile();
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen((prev) => !prev);
+  };
 
   return (
     <SectionLayout
@@ -50,11 +57,12 @@ export const HeroSection = () => {
               EasyFluid is a web based service for monitoring your metalworking
               fluids, oils etc.
             </p>
-            <div className="flex flex-row w-full md:flex-col md:w-full lg:flex-row gap-5 my-12">
-              <BlueButton.a href="https://forms.zohopublic.com/easycut/form/Getintouch/formperma/Kp71kdB60A8UPI5FTskmhwZ5XNczZ1iC03HZOElnsLQ" block>
+            <div className="flex flex-row items-center w-full md:flex-col md:w-full lg:flex-row gap-5 my-12">
+              <BlueButton onClick={toggleModal} block className="w-full">
                 Get in Touch!
-              </BlueButton.a>
-              <TransparentButton.a href="https://easycut.zohobookings.com/#/easyfluid">
+              </BlueButton>
+              <span className="hidden text-gray-200 sm:block">or</span>
+              <TransparentButton.a href="https://easycut.zohobookings.com/#/easyfluid" className="text-center">
                 Book a Demo!
               </TransparentButton.a>
             </div>
@@ -106,7 +114,7 @@ export const HeroSection = () => {
               />
             </motion.div>
             <motion.div
-              className="absolute left-10 bottom-28 md:-left-28 md:-bottom-28 lg:-left-0 lg:-bottom-44"
+              className="absolute left-10 bottom-28 rounded-full overflow-hidden md:-left-28 md:-bottom-28 lg:-left-0 lg:-bottom-44"
               style={{
                 zIndex: 11,
                 ...(isMobile
@@ -116,15 +124,15 @@ export const HeroSection = () => {
               variants={fadeIn}
             >
               <Image
-                className="h-auto"
-                src="/man1.png"
+                className="height-unset object-cover"
+                src="/man1.jpg"
                 width="110"
                 height="110"
                 alt="human picture 1"
               />
             </motion.div>
             <motion.div
-              className="absolute top-1/4 left-0 scale-125 md:-left-28 md:top-28 md:scale-0 lg:-left-34"
+              className="absolute top-1/4 left-0 scale-125 rounded-full overflow-hidden md:-left-28 md:top-28 md:scale-0 lg:-left-34"
               style={{
                 zIndex: 12,
                 ...(isMobile
@@ -134,15 +142,15 @@ export const HeroSection = () => {
               variants={fadeIn}
             >
               <Image
-                className="h-auto"
-                src="/man2.png"
+                className="height-unset object-cover"
+                src="/man2.jpeg"
                 width="64"
                 height="64"
                 alt="human picture 2"
               />
             </motion.div>
             <motion.div
-              className="absolute -top-28 left-20 md:top-0 md:-left-10 lg:-top-16 lg:-left-0"
+              className="absolute -top-28 left-20 rounded-full overflow-hidden md:top-0 md:-left-10 lg:-top-16 lg:-left-0"
               style={{
                 zIndex: 14,
                 ...(isMobile
@@ -152,8 +160,8 @@ export const HeroSection = () => {
               variants={fadeIn}
             >
               <Image
-                className="h-auto"
-                src="/man3.png"
+                className="height-unset object-cover"
+                src="/man3.jpg"
                 width="74"
                 height="74"
                 alt="human picture 3"
@@ -162,6 +170,7 @@ export const HeroSection = () => {
           </motion.div>
         </div>
       </MainWrapper>
+      <ContactUsModal isOpen={isModalOpen} onClose={toggleModal} />
     </SectionLayout>
   );
 };

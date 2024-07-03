@@ -46,7 +46,7 @@ export const PricingSection = () => {
         </div>
         <Card className="mx-auto w-11/12 bg-white card" showAnim style={{borderRadius: 20}}>
           <p className="text-center font-inter text-xl text-gray">
-            or enjou 10% off discount for annual subscription.
+            or enjoy 10% off discount for annual subscription.
           </p>
         </Card>
       </MainWrapper>

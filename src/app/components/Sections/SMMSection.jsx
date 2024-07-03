@@ -6,13 +6,13 @@ import { Card } from "../UI/Card";
 const cards = [
   {
     title: "230L",
-    subtitle: "Concentration",
-    content: "Target concentration 7%",
+    subtitle: "Tank volume",
+    content: "Machine tank volume is 230L",
   },
   {
     title: "7%",
-    subtitle: "Tank volume",
-    content: "Machine tank volume is 230L",
+    subtitle: "Concentration",
+    content: "Target concentration 7%",
   },
   {
     title: "3%",

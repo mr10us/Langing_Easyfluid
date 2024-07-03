@@ -51,7 +51,7 @@ export const HeroSection = () => {
         <div className="flex justify-between flex-col md:flex-row w-full gap-40 mt-[120px] md:mt-0">
           <div className="md:basis-1/2">
             <h1 className="font-bold text-gray-100 text-5xl mb-5">
-              Welcome EasyFluid!
+              Welcome to EasyFluid!
             </h1>
             <p className="text-gray-100 text-base font-normal">
               EasyFluid is a web based service for monitoring your metalworking

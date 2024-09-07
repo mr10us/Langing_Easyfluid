@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "next-export-optimize-images/image";
 import { Typography } from "../UI/Typography";
 import { BlueButton } from "../UI/Buttons/BlueButton";
 import { SectionCard } from "@/app/layouts/SectionCard";
@@ -45,7 +45,7 @@ export const BDCard = () => {
           <span className="hidden text-gray-dark lg:block">or</span>
           <TransparentButton.a
             href="https://easycut.zohobookings.com/#/easyfluid"
-            className="w-full text-center !bg-gray-400 hover:border-gray-400 lg:w-[calc(50%-20px)]"
+            className="w-full text-white text-center !bg-gray-500 hover:border-gray-400 lg:w-[calc(50%-20px)]"
           >
             Book a Demo!
           </TransparentButton.a>

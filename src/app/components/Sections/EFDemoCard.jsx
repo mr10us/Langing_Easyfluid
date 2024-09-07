@@ -1,8 +1,7 @@
 "use client";
 
 import { SectionCard } from "@/app/layouts/SectionCard";
-import Image from "next/image";
-import Done from "../../../../public/done.svg";
+import Image from "next-export-optimize-images/image";
 import { BlueButton } from "../UI/Buttons/BlueButton";
 import useIsMobile from "@/app/hooks/useIsMobile";
 import { TransparentButton } from "../UI/Buttons/TransparentButton";
@@ -44,14 +43,14 @@ export const EFDemoCard = () => {
           It calculates everything - all you need is to enter refractometer
           readings and fluid level in the machine sump! As a result:
         </p>
-        <div>
+        <div className="grid grid-rows-2 gap-2">
           {benefits.map((text, index) => (
             <span
               key={index}
-              className="flex items-center gap-4 font-light text-gray-100"
+              className="grid grid-cols-[auto,1fr] items-center gap-4 font-light text-gray-100"
             >
-              <div>
-                <Done />
+              <div className="w-[22px] h-[22px]">
+                <Image src="/done.svg" width="22" height="22" alt="done image" title="done image" />
               </div>
               {text}
             </span>

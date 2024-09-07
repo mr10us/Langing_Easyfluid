@@ -1,6 +1,6 @@
 import { MainWrapper } from "@/app/layouts/MainWrapper";
 import { SectionLayout } from "@/app/layouts/SectionLayout";
-import Image from "next/image";
+import Image from "next-export-optimize-images/image";
 import { Typography } from "../UI/Typography";
 
 export const TediousSection = () => {

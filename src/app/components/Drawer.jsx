@@ -41,14 +41,29 @@ const Drawer = ({ isDrawerOpen, toggleDrawer, toggleModal }) => {
           <nav className="flex gap-4 flex-col py-5 pb-10">
             {/* Map over the links array to render the links. */}
             {links.map(({ label, path }) => (
-              <Link href={path} className="text-gray-200 w-fit py-2" key={path} onClick={() => toggleDrawer()}>
+              <Link
+                href={path}
+                className="text-gray-200 w-fit py-2"
+                key={path}
+                onClick={() => toggleDrawer()}
+              >
                 {label}
               </Link>
             ))}
-            {/* Add a "Contact Us" button. */}
-            <WhiteButton className="px-5 py-2 rounded-[30px] w-fit" onClick={toggleModal}>
+            {/* The "Contact Us" button. */}
+            <WhiteButton
+              style={{ padding: "10px 20px", borderRadius: 30, width: "fit-content" }}
+              onClick={toggleModal}
+            >
               Contact Us
             </WhiteButton>
+            {/* The Log In button */}
+            <WhiteButton.a
+              href="https://app.easyfluid.eu/login"
+              style={{ padding: "10px 20px", borderRadius: 30, width: "fit-content" }}
+            >
+              Log In
+            </WhiteButton.a>
           </nav>
         </MainWrapper>
       </div>

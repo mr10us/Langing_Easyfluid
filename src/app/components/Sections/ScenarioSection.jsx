@@ -3,9 +3,8 @@ import { SectionLayout } from "@/app/layouts/SectionLayout";
 import { TextWrapper } from "@/app/layouts/TextWrapper";
 import { Typography } from "../UI/Typography";
 import { Card } from "../UI/Card";
-import Arrow from "../../../../public/arrow.svg";
 import React from "react";
-import Image from "next/image";
+import Image from "next-export-optimize-images/image";
 
 /**
  * ScenarioSection component.
@@ -67,10 +66,10 @@ const scenarioTextOne = [
 
 /**
  * Render the scenario 1 component
- * 
+ *
  * This component displays a scenario where the concentration of the machine
  * tank is low after a few days of operation.
- * 
+ *
  * @returns {JSX.Element} The rendered scenario 1 component
  */
 const ScenarioOne = () => {
@@ -87,9 +86,24 @@ const ScenarioOne = () => {
       <div className="flex justify-between w-full gap-5">
         {/* Render the cards */}
         {scenatioCardsOne.map((card) => (
-          <Card key={card.title} className="relative w-1/2 flex flex-col gap-4 lg:gap-10 bg-white">
+          <Card
+            key={card.title}
+            className="relative w-1/2 flex flex-col gap-4 lg:gap-10 bg-white"
+          >
             {/* Arrow */}
-            <Arrow className={`${card.arrow} absolute top-5 right-5`} />
+            <svg
+              className={`${card.arrow} absolute top-5 right-5`}
+              width="16"
+              height="25"
+              viewBox="0 0 16 25"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.29289 24.7071C7.68342 25.0976 8.31658 25.0976 8.70711 24.7071L15.0711 18.3431C15.4616 17.9526 15.4616 17.3195 15.0711 16.9289C14.6805 16.5384 14.0474 16.5384 13.6569 16.9289L8 22.5858L2.34315 16.9289C1.95262 16.5384 1.31946 16.5384 0.928932 16.9289C0.538408 17.3195 0.538408 17.9526 0.928932 18.3431L7.29289 24.7071ZM7 0L7 24H9L9 0L7 0Z"
+                fill="#FD4E5D"
+              />
+            </svg>
             {/* Card title */}
             <p
               className={`font-inter text-2xl font-bold font ${
@@ -176,10 +190,10 @@ const scenarioTextTwo = [
 
 /**
  * Render the scenario 2 component
- * 
+ *
  * This component displays a scenario where the concentration of the machine
  * tank is low due to operator's inactivity.
- * 
+ *
  * @returns {JSX.Element} The rendered scenario 2 component
  */
 const ScenarioTwo = () => {
@@ -199,9 +213,24 @@ const ScenarioTwo = () => {
       <div className="flex justify-between w-full gap-5">
         {/* Render the cards */}
         {scenatioCardsTwo.map((card) => (
-          <Card key={card.title} className="relative w-1/2 flex flex-col gap-4 lg:gap-10 bg-white">
+          <Card
+            key={card.title}
+            className="relative w-1/2 flex flex-col gap-4 lg:gap-10 bg-white"
+          >
             {/* Arrow */}
-            <Arrow className={`${card.arrow} absolute top-5 right-5`} />
+            <svg
+              width="16"
+              height="25"
+              viewBox="0 0 16 25"
+              fill="none"
+              className={`${card.arrow} absolute top-5 right-5`}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.29289 24.7071C7.68342 25.0976 8.31658 25.0976 8.70711 24.7071L15.0711 18.3431C15.4616 17.9526 15.4616 17.3195 15.0711 16.9289C14.6805 16.5384 14.0474 16.5384 13.6569 16.9289L8 22.5858L2.34315 16.9289C1.95262 16.5384 1.31946 16.5384 0.928932 16.9289C0.538408 17.3195 0.538408 17.9526 0.928932 18.3431L7.29289 24.7071ZM7 0L7 24H9L9 0L7 0Z"
+                fill="#FD4E5D"
+              />
+            </svg>
             {/* Card title */}
             <p
               className={`font-inter text-2xl font-bold font ${

@@ -2,7 +2,7 @@ import { MainWrapper } from "@/app/layouts/MainWrapper";
 import { SectionLayout } from "@/app/layouts/SectionLayout";
 import { Typography } from "../UI/Typography";
 import { TextWrapper } from "@/app/layouts/TextWrapper";
-import Image from "next/image";
+import Image from "next-export-optimize-images/image";
 import { SectionCard } from "@/app/layouts/SectionCard";
 
 const blockOne = [
@@ -68,7 +68,7 @@ export const SpecialFSection = () => {
             backgroundSize: "cover",
           }}
         >
-          <TextWrapper style={{ padding: "20px 60px" }}>
+          <TextWrapper className="p-5 sm:px-16 sm:py-5">
             <Typography.H2Bold className="text-gray-dark w-3/4 text-center mx-auto mb-10">
               {/* Heading with blue text "special features" */}
               Some <span className="text-blue">special features</span> that

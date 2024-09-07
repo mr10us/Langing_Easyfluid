@@ -1,8 +1,9 @@
+// user-scalable=no
+
 import { Heebo, Inter } from "next/font/google";
-import "./globals.css";
-import { cn } from "./utils";
-import { ZohoAnalytics } from "./components/ZohoAnalytics";
-import { GoogleAnalytics } from "./components/GoogleAnalytics";
+import { cn } from "./../utils";
+import { ZohoAnalytics } from "../components/ZohoAnalytics";
+import { GoogleAnalytics } from "../components/GoogleAnalytics";
 
 const heebo = Heebo({
   subsets: ["latin"],
@@ -53,11 +54,12 @@ export const metadata = {
 export const viewport = {
   width: "device-width",
   initialScale: 1,
+  userScalable: "no",
 };
 
-export default function RootLayout({ children }) {
+export default function CalculatorLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" style={{ scrollBehavior: "unset" }}>
       <meta name="msapplication-TileColor" content="#da532c" />
       <meta name="theme-color" content="#ffffff" />
       <meta name="google-site-verification" content="8p4ZG_haqWhMpyOJ-_GxPvShSvv8UuVZcVIKeiwzAQE" />

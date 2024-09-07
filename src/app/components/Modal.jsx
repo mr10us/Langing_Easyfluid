@@ -58,7 +58,7 @@ const Modal = ({ isOpen, onClose, children }) => {
         animate="animate"
         exit="exit"
       >
-        <div className="relative bg-white rounded-lg shadow-lg w-11/12 h-11/12 md:h-1/2 md:w-1/2 lg:w-1/3 lg:h-fit">
+        <div className="relative bg-white rounded-lg shadow-lg w-11/12 h-5/6 md:w-1/2 lg:w-1/3">
           <div className="absolute top-0 right-0 flex justify-end p-2">
             <button
               onClick={onClose}

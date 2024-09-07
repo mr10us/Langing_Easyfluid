@@ -7,7 +7,7 @@ export const BlueButton = ({ children, onClick, style, className, type = "button
       onClick={onClick}
       type={type}
       className={cn(
-        "bg-blue text-gray-100 text-xl font-medium px-4 py-2 rounded-xl hover:bg-blue-light active:bg-blue-dark transition-colors duration-300",
+        "bg-blue w-full text-gray-100 text-xl font-medium px-4 py-2 rounded-xl hover:bg-blue-light active:bg-blue-dark transition-colors duration-300",
         className
       )}
       style={style}
@@ -22,7 +22,7 @@ BlueButton.Link = ({ children, href, style, className }) => {
     <Link
       href={href}
       className={cn(
-        "bg-blue text-gray-100 text-xl font-medium px-4 py-2 rounded-xl hover:bg-blue-light active:bg-blue-dark transition-colors duration-300",
+        "bg-blue w-full text-gray-100 text-xl font-medium px-4 py-2 rounded-xl hover:bg-blue-light active:bg-blue-dark transition-colors duration-300",
         className
       )}
       style={style}
@@ -35,6 +35,7 @@ BlueButton.Link = ({ children, href, style, className }) => {
 BlueButton.a = ({
   children,
   href,
+  target = "_blank",
   style,
   className,
   withArrow = false,
@@ -43,7 +44,7 @@ BlueButton.a = ({
   return (
     <a
       href={href}
-      target="_blank"
+      target={target}
       className={cn(
         "bg-blue text-gray-100 text-xl font-medium px-4 py-2 rounded-xl flex hover:bg-blue-light active:bg-blue-dark transition-all duration-300 items-center gap-2 link cursor-pointer",
         className,

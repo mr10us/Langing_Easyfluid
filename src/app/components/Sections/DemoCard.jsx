@@ -3,7 +3,7 @@
 import { SectionCard } from "@/app/layouts/SectionCard";
 import { Typography } from "../UI/Typography";
 import { BlueButton } from "../UI/Buttons/BlueButton";
-import Image from "next/image";
+import Image from "next-export-optimize-images/image";
 import { TransparentButton } from "../UI/Buttons/TransparentButton";
 import { ContactUsModal } from "../Modals/ContactUsModal";
 import { useState } from "react";
@@ -36,7 +36,7 @@ export const DemoCard = () => {
           <span className="hidden text-gray-dark sm:block">or</span>
           <TransparentButton.a
             href="https://easycut.zohobookings.com/#/easyfluid"
-            className="!bg-gray-400 hover:border-gray-400"
+            className="text-white !bg-gray-500 hover:border-gray-400"
           >
             Book a Demo!
           </TransparentButton.a>

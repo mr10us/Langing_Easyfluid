@@ -1,4 +1,5 @@
-/** @type {import('next').NextConfig} */
+import withExportImages from 'next-export-optimize-images';
+
 const nextConfig = {
   webpack(config) {
     config.module.rules.push({
@@ -8,6 +9,7 @@ const nextConfig = {
 
     return config;
   },
+  // output: 'export'
 };
 
-export default nextConfig;
+export default withExportImages(nextConfig);

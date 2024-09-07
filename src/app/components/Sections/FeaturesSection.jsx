@@ -104,7 +104,7 @@ export const FeaturesSection = () => {
               Get in Touch!
             </BlueButton>
             <span className="hidden text-gray-dark sm:block">or</span>
-            <TransparentButton.a href="https://easycut.zohobookings.com/#/easyfluid" className="!bg-gray-400 hover:border-gray-400 md:w-[calc(50%-20px)]">
+            <TransparentButton.a href="https://easycut.zohobookings.com/#/easyfluid" className="text-white !bg-gray-500 hover:border-gray-400 md:w-[calc(50%-20px)]">
               Book a Demo!
             </TransparentButton.a>
           </div>

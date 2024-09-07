@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { MainWrapper } from "../../layouts/MainWrapper";
 import links from "@/app/nav.json";
-import Image from "next/image";
+import Image from "next-export-optimize-images/image";
 import { useEffect, useState } from "react";
 import Drawer from "../Drawer";
 import { WhiteButton } from "../UI/Buttons/WhiteButton";
@@ -15,7 +15,7 @@ import { ContactUsModal } from "../Modals/ContactUsModal";
  * It contains the logo, navigation links, and a "Contact Us" button.
  * It also has a drawer for mobile devices.
  */
-export const Header = () => {
+export const Header = ({ fixed = true }) => {
   // State variables to track the scroll position and the drawer state.
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -63,8 +63,9 @@ export const Header = () => {
   return (
     // The header element with the appropriate class names and styles.
     <header
-      className={`fixed top-0 left-0 w-full h-[86px] bg-gray-200 bg-opacity-5 transition-colors duration-300 z-50 ${
-        isScrolled ? "bg-gray-950 bg-opacity-50" : ""
+      className={`top-0 left-0 w-full h-[86px] bg-opacity-5 transition-colors duration-300 z-50 ${
+        isScrolled ? "bg-gray-950 bg-opacity-50" : ""}
+        ${fixed ? "fixed bg-gray-200" : "block bg-hero-gradient"
       }`}
       style={isDrawerOpen ? { backgroundColor: "#273040" } : {}}
     >
@@ -72,7 +73,7 @@ export const Header = () => {
       <MainWrapper className="flex items-center h-full">
         <div className="flex justify-between items-center w-full">
           {/* The logo link. */}
-          <Link href="#hero">
+          <Link href="/#hero">
             <Image
               className="h-auto"
               src="/logo.png"
@@ -92,13 +93,22 @@ export const Header = () => {
                 {label}
               </Link>
             ))}
-            {/* The "Contact Us" button. */}
-            <WhiteButton
-              style={{ padding: "10px 20px", borderRadius: 30 }}
-              onClick={toggleModal}
-            >
-              Contact Us
-            </WhiteButton>
+            <div className="flex gap-4 items-center">
+              {/* The "Contact Us" button. */}
+              <WhiteButton
+                style={{ padding: "10px 20px", borderRadius: 30 }}
+                onClick={toggleModal}
+              >
+                Contact Us
+              </WhiteButton>
+              {/* The Log In button */}
+              <WhiteButton.a
+                href="https://app.easyfluid.eu/login"
+                style={{ padding: "10px 20px", borderRadius: 30 }}
+              >
+                Log In
+              </WhiteButton.a>
+            </div>
           </nav>
           {/* The burger button for mobile devices. */}
           <BurgerButton

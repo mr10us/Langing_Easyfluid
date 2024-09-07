@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
+import Image from "next-export-optimize-images/image";
 import { MainWrapper } from "../../layouts/MainWrapper";
 import { SectionLayout } from "../../layouts/SectionLayout";
 import { BlueButton } from "../UI/Buttons/BlueButton";
@@ -30,6 +30,8 @@ export const HeroSection = () => {
     manThreeX,
   } = useScrollAnimations();
   const isMobile = useIsMobile();
+
+  console.log(this)
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 

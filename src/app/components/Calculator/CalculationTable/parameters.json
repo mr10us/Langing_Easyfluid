@@ -1,0 +1,284 @@
+[
+  {
+    "id": 1,
+    "for": "machine",
+    "variable_name": "S",
+    "name": "Machine sump area",
+    "explanation": "Like footprint if the machine tank, L*D",
+    "unit": "m²",
+    "type": "static",
+    "evaluations": null,
+    "static_value": null,
+    "measured_value": null,
+    "calculated_value": null
+  },
+  {
+    "id": 2,
+    "for": "machine",
+    "variable_name": "MSV",
+    "name": "Machine Sump Volume",
+    "explanation": "Only machine sump",
+    "unit": "L",
+    "type": "static",
+    "evaluations": null,
+    "static_value": null,
+    "measured_value": null,
+    "calculated_value": null
+  },
+  {
+    "id": 3,
+    "for": "machine",
+    "variable_name": "AV",
+    "name": "Additional volume",
+    "explanation": "Any additional volume that is not in the tank, like chiller unit, high pressure pump, filtration station etc.",
+    "unit": "L",
+    "type": "static",
+    "evaluations": null,
+    "static_value": null,
+    "measured_value": null,
+    "calculated_value": null
+  },
+  {
+    "id": 4,
+    "for": "machine",
+    "variable_name": "Hmax",
+    "name": "Max height of emulsion in the machine tank",
+    "explanation": "When the tank is full, set it in meters, like if you have max depth of emulsion 25 cm, set it as 0,25",
+    "unit": "m",
+    "type": "static",
+    "evaluations": null,
+    "static_value": null,
+    "measured_value": null,
+    "calculated_value": null
+  },
+  {
+    "id": 5,
+    "for": "machine",
+    "variable_name": "rcor",
+    "name": "Tramp oil compensation",
+    "explanation": "",
+    "unit": "%",
+    "type": "static",
+    "evaluations": null,
+    "static_value": null,
+    "measured_value": null,
+    "calculated_value": null
+  },
+  {
+    "id": 6,
+    "variable_name": "H",
+    "name": "Actual tank depth",
+    "explanation": "Measure the actual depth of the tank in meters",
+    "unit": "m",
+    "type": "measured",
+    "evaluations": null,
+    "static_value": null,
+    "measured_value": 10,
+    "calculated_value": null
+  },
+  {
+    "id": 7,
+    "variable_name": "R",
+    "name": "Refractometer reading, Brix",
+    "explanation": "What you see in your refractometer",
+    "unit": "%",
+    "type": "measured",
+    "evaluations": null,
+    "static_value": null,
+    "measured_value": 5,
+    "calculated_value": null
+  },
+  {
+    "id": 8,
+    "for": "cf",
+    "variable_name": "RF",
+    "name": "Cutting fluid refractometer factor",
+    "explanation": "You use one to calculate concentration, multiplying your refractometer reading",
+    "unit": "%",
+    "type": "static",
+    "evaluations": null,
+    "static_value": null,
+    "measured_value": null,
+    "calculated_value": null
+  },
+  {
+    "id": 9,
+    "for": "cf",
+    "variable_name": "TC",
+    "name": "Target concentration",
+    "explanation": "The MWF target concentration",
+    "unit": "%",
+    "type": "static",
+    "evaluations": null,
+    "static_value": null,
+    "measured_value": null,
+    "calculated_value": null
+  },
+  {
+    "id": 10,
+    "for": "mixer",
+    "variable_name": "MC",
+    "name": "Mixer top-up concentration",
+    "unit": "%",
+    "type": "static",
+    "explanation": "Default mixer topping-up concentration",
+    "evaluations": null,
+    "static_value": null,
+    "measured_value": null,
+    "calculated_value": null
+  },
+  {
+    "id": 11,
+    "variable_name": "AC",
+    "name": "Actual concentration",
+    "explanation": "Refractometer reading multiplied by your MWF optical factor",
+    "unit": "%",
+    "type": "calculated",
+    "evaluations": {
+      "good": {
+        "min": {
+          "formula": "TC",
+          "include": true
+        },
+        "max": {
+          "formula": "TC+.03",
+          "include": true
+        }
+      },
+      "suspicious": {
+        "min": {
+          "formula": "TC+.03",
+          "include": false
+        },
+        "max": {
+          "formula": "TC+10",
+          "include": false
+        }
+      },
+      "warning": {
+        "min": {
+          "formula": "TC-.02",
+          "include": false
+        },
+        "max": {
+          "formula": "TC",
+          "include": false
+        }
+      },
+      "critical": {
+        "min": {
+          "formula": "-999",
+          "include": false
+        },
+        "max": {
+          "formula": "TC-0.02",
+          "include": false
+        }
+      }
+    },
+    "static_value": null,
+    "measured_value": null,
+    "calculated_value": null
+  },
+  {
+    "id": 12,
+    "variable_name": "AddC",
+    "name": "Add concentrate",
+    "explanation": "Add this amount of MWF concentrate, then the rest from the mixer",
+    "unit": "L",
+    "type": "calculated",
+    "evaluations": null,
+    "static_value": null,
+    "measured_value": null,
+    "calculated_value": null
+  },
+  {
+    "id": 13,
+    "variable_name": "AddW",
+    "name": "Add water",
+    "explanation": "Add this amount of water, then the rest from the mixer",
+    "unit": "L",
+    "type": "calculated",
+    "evaluations": null,
+    "static_value": null,
+    "measured_value": null,
+    "calculated_value": null
+  },
+  {
+    "id": 14,
+    "variable_name": "TF",
+    "name": "Tank full",
+    "explanation": "",
+    "unit": "%",
+    "type": "calculated",
+    "evaluations": {
+      "good": {
+        "min": {
+          "formula": ".8",
+          "include": true
+        },
+        "max": {
+          "formula": "1",
+          "include": true
+        }
+      },
+      "suspicious": {
+        "min": {
+          "formula": ".65",
+          "include": true
+        },
+        "max": {
+          "formula": ".8",
+          "include": false
+        }
+      },
+      "warning": {
+        "min": {
+          "formula": ".5",
+          "include": false
+        },
+        "max": {
+          "formula": ".65",
+          "include": false
+        }
+      },
+      "critical": {
+        "min": {
+          "formula": "0",
+          "include": false
+        },
+        "max": {
+          "formula": ".5",
+          "include": true
+        }
+      }
+    },
+    "static_value": null,
+    "measured_value": null,
+    "calculated_value": null
+  },
+  {
+    "id": 15,
+    "variable_name": "TUC",
+    "name": "Top-up concentration",
+    "explanation": "Unique for this machine at this time",
+    "unit": "%",
+    "type": "calculated",
+    "evaluations": null,
+    "static_value": null,
+    "measured_value": null,
+    "calculated_value": null
+  },
+  {
+    "id": 16,
+    "variable_name": "TV",
+    "name": "Total volume",
+    "explanation": "",
+    "unit": "l",
+    "type": "calculated",
+    "evaluations": null,
+    "static_value": null,
+    "measured_value": null,
+    "calculated_value": null
+  }
+]

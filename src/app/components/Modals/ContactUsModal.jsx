@@ -14,6 +14,9 @@ import { formPopup } from "@/app/animations/Form";
 // });
 
 export const ContactUsModal = ({ isOpen, onClose }) => {
+  const [loading, setLoading] = useState(true);
+
+  const hideLoader = () => setLoading(false);
 
   useEffect(() => {
     if (isOpen) {
@@ -30,15 +33,21 @@ export const ContactUsModal = ({ isOpen, onClose }) => {
   }, [isOpen]);
 
   if (!isOpen) return null;
-  
+
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
-        <iframe
-          ariaLabel="Get in touch!"
-          frameborder="0"
-          style={{ height: 500, width: "99%", border: "none" }}
-          src="https://forms.zohopublic.com/easycut/form/Getintouch/formperma/Kp71kdB60A8UPI5FTskmhwZ5XNczZ1iC03HZOElnsLQ"
-        ></iframe>
+      {loading ? <Loader loading={loading} /> : null}
+      <iframe
+        ariaLabel="Get in touch!"
+        frameborder="0"
+        onLoad={hideLoader}
+        style={
+          loading
+            ? { display: "none" }
+            : { height: "100%", width: "99%", border: "none" }
+        }
+        src="https://forms.zohopublic.com/easycut/form/Getintouch/formperma/Kp71kdB60A8UPI5FTskmhwZ5XNczZ1iC03HZOElnsLQ"
+      ></iframe>
     </Modal>
   );
 };

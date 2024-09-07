@@ -12,18 +12,20 @@ import { WTPSection } from "./components/Sections/WTPSection";
 
 export default function Home() {
   return (
-    <main>
+    <>
       <Header />
-      <HeroSection />
-      <WTPSection />
-      <FeaturesSection />
-      <SpecialFSection />
-      <SMMSection />
-      <ScenarioSection />
-      <TediousSection />
-      <CardsSection />
-      <PricingSection />
+      <main>
+        <HeroSection />
+        <WTPSection />
+        <FeaturesSection />
+        <SpecialFSection />
+        <SMMSection />
+        <ScenarioSection />
+        <TediousSection />
+        <CardsSection />
+        <PricingSection />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

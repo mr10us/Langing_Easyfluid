@@ -37,7 +37,7 @@ export const HTSCard = () => {
           <span className="hidden text-gray-200 sm:block">or</span>
           <TransparentButton.a
             href="https://easycut.zohobookings.com/#/easyfluid"
-            className="!w-full !bg-gray-400 border-transparent hover:border-gray-400 md:w-[calc(50%-20px)]"
+            className="!w-full text-white !bg-gray-500 border-transparent hover:border-gray-400 md:w-[calc(50%-20px)]"
           >
             Book a Demo!
           </TransparentButton.a>

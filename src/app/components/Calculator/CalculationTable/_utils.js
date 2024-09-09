@@ -113,11 +113,12 @@ export const getTableData = (params) => {
 };
 
 function sortParameters(parameters = []) {
-  return parameters.toSorted((a, b) => {
-    const order = { measured: 1, calculated: 2, static: 3 };
+  const order = { measured: 1, calculated: 2, static: 3 };
 
-    return order[a.type] - order[b.type];
-  });
+  const sortedParameters = JSON.parse(JSON.stringify(parameters));
+  sortedParameters.sort((a, b) => order[a.type] - order[b.type]);
+
+  return sortedParameters;
 }
 
 function evaluateParam(param, calculatedValue, variables) {

@@ -112,7 +112,7 @@ export const getTableData = (params) => {
   return result;
 };
 
-function sortParameters(parameters) {
+function sortParameters(parameters = []) {
   return parameters.toSorted((a, b) => {
     const order = { measured: 1, calculated: 2, static: 3 };
 

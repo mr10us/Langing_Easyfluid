@@ -3,11 +3,6 @@
  */
 const config = {
   outDir: "out",
-  convertFormat: [
-    ["png", "webp"],
-    ["jpg", "webp"],
-    ["jpeg", "webp"],
-  ],
 };
 
 module.exports = config;

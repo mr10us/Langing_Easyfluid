@@ -125,7 +125,7 @@ function evaluateParam(param, calculatedValue, variables) {
   if (!param.evaluations) return null;
 
   for (const [evaluation, ranges] of Object.entries(param.evaluations)) {
-    let min,
+    let min = null,
       max = null;
 
     try {
@@ -135,22 +135,30 @@ function evaluateParam(param, calculatedValue, variables) {
         );
       };
 
+      // Evaluate min and max formulas
       min = ranges.min ? evalFormula(ranges.min.formula) : null;
       max = ranges.max ? evalFormula(ranges.max.formula) : null;
     } catch (error) {
       throw new Error(`Error during evaluation: ${error.message}`);
     }
 
-    if (
-      (min === null || calculatedValue >= min) &&
-      (max === null || calculatedValue <= max)
-    ) {
+    // Check the conditions based on 'include'
+    const minCondition =
+      min === null ||
+      (ranges.min.include ? calculatedValue >= min : calculatedValue > min);
+
+    const maxCondition =
+      max === null ||
+      (ranges.max.include ? calculatedValue <= max : calculatedValue < max);
+
+    if (minCondition && maxCondition) {
       return evaluation;
     }
   }
 
   return null;
 }
+
 
 export function calculateParameters() {
   let S,

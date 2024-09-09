@@ -40,6 +40,8 @@ const items = [
             </span>
           </div>
         );
+      if (param.id === 2) return <div className="mb-8" key={param.id}>{parameterInput}</div>;
+
       return parameterInput;
     }),
   },
@@ -90,7 +92,9 @@ export const CalculationSection = () => {
             <VolumeCalculationModal />
           </VolumeModal.Provider>
           <div className="2xl:-mx-[22%]">
-            <CalculationSuccessModalContext.Provider value={successModalContext}>
+            <CalculationSuccessModalContext.Provider
+              value={successModalContext}
+            >
               <CalculationTable />
             </CalculationSuccessModalContext.Provider>
           </div>

@@ -1,7 +1,7 @@
 import { MainWrapper } from "@/app/layouts/MainWrapper";
 import { SectionLayout } from "@/app/layouts/SectionLayout";
 import { BlueButton } from "../UI/Buttons/BlueButton";
-import Image from "next/image";
+import Image from "next-export-optimize-images/image";
 
 export const CalculatorHero = () => {
   return (

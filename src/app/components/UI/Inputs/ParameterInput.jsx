@@ -1,6 +1,10 @@
+import {
+  ParametersDispatchProvider,
+  ParametersProvider,
+} from "@/app/calculator/ParametersContext";
 import { cn } from "@/app/utils";
 import { Input } from "antd";
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 const isNumeric = (input) => /^[-+.,]?\d*[.,]?\d*$/.test(input);
 
@@ -27,13 +31,24 @@ const evaluations = {
   },
 };
 
-export const ParameterInput = ({ value = 0, evaluation, id, suffix }) => {
-  const [inputValue, setInputValue] = useState(value);
+export const ParameterInput = ({ evaluation, id, suffix }) => {
   const [isValid, setIsValid] = useState(true);
+
+  const parameters = useContext(ParametersProvider);
+  const inputValue = parameters.find(
+    (param) => param.variable_name === id
+  )?.value;
+  const dispatch = useContext(ParametersDispatchProvider);
+
   const handleChangeValue = (event) => {
     const value = event.target.value;
+
     if (isNumeric(value)) {
-      setInputValue(value);
+      dispatch((prev) =>
+        prev.map((param) =>
+          param.variable_name === id ? { ...param, value } : param
+        )
+      );
     } else {
       setIsValid(false);
       setTimeout(() => setIsValid(true), 500);
@@ -44,6 +59,7 @@ export const ParameterInput = ({ value = 0, evaluation, id, suffix }) => {
 
   return (
     <Input
+      key={id}
       id={id}
       inputMode="decimal"
       value={inputValue}

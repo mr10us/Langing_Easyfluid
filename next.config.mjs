@@ -9,8 +9,8 @@ const nextConfig = {
 
     return config;
   },
-  // output: "export",
+  output: "export",
 };
 
-// export default withExportImages(nextConfig);
-export default nextConfig;
+export default withExportImages(nextConfig);
+// export default nextConfig;

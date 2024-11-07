@@ -104,6 +104,8 @@ export function calculateParameters(parameters) {
       throw new Error("[AV]: AV is not defined. Please, fill the parameter.");
     }
 
+    console.log(cutLongNumber((TV - AV) / (Hmax * 1000)))
+
     return cutLongNumber((TV - AV) / (Hmax * 1000));
   }
 
@@ -200,7 +202,7 @@ export function calculateParameters(parameters) {
 
   function calculateAddC() {
     const TUC = toPercent(result.TUC.value);
-    const MC = result.MC.value;
+    const MC = toPercent(result.MC.value);
     const CPlus = result.CPlus.value;
     const ACV = result.ACV.value;
     const TV = result.TV.value;
@@ -243,7 +245,7 @@ export function calculateParameters(parameters) {
     const AC = toPercent(result.AC.value);
     const TC = toPercent(result.TC.value);
     const TUC = toPercent(result.TUC.value);
-    const MC = result.MC.value;
+    const MC = toPercent(result.MC.value);
     const TUV = result.TUV.value;
 
     if (ACV === null) {

@@ -7,6 +7,7 @@ import { FillMachine } from "./Steps/FillMachine";
 import { LastStep } from "./Steps/LastStep";
 import { ParametersProvider } from "../ParametersContext";
 import { calculateParameters } from "../_utils";
+import { FillMixer } from "./Steps/FillMixer";
 
 export const CalculatorScreens = () => {
   const [current, setCurrent] = useState(0);
@@ -54,6 +55,7 @@ export const CalculatorScreens = () => {
   const steps = [
     { title: "Fill the machine parameters", content: <FillMachine /> },
     { title: "Fill the CF parameters", content: <FillCF /> },
+    { title: "Fill the Mixer parameters", content: <FillMixer /> },
     { title: "Get the result", content: <LastStep /> },
   ];
 

@@ -3,10 +3,10 @@
 <rect width="1200" height="1772" fill="white"/>
 <g clip-path="url(#clip1_2064_4866)">
 <rect width="1200" height="1772" fill="url(#paint0_linear_2064_4866)"/>
-<circle opacity="0.3" cx="1055" cy="274" r="19.8995" transform="rotate(-90 1055 274)" fill="url(#paint1_linear_2064_4866)" stroke="url(#paint2_linear_2064_4866)" stroke-width="0.201086"/>
-<circle opacity="0.3" cx="5.5" cy="1024.5" r="35.3995" transform="rotate(-90 5.5 1024.5)" fill="url(#paint3_linear_2064_4866)" stroke="url(#paint4_linear_2064_4866)" stroke-width="0.201086"/>
-<circle opacity="0.3" cx="1164" cy="1624" r="108.899" transform="rotate(-90 1164 1624)" fill="url(#paint5_linear_2064_4866)" stroke="url(#paint6_linear_2064_4866)" stroke-width="0.201086"/>
-<circle opacity="0.3" cx="103" cy="115" r="96.8995" transform="rotate(-90 103 115)" fill="url(#paint7_linear_2064_4866)" stroke="url(#paint8_linear_2064_4866)" stroke-width="0.201086"/>
+<circle opacity="0.3" cx="1055" cy="274" r="19.8995" transform="rotate(-90 1055 274)" fill="url(#paint1_linear_2064_4866)" stroke="url(#paint2_linear_2064_4866)" strokeWidth="0.201086"/>
+<circle opacity="0.3" cx="5.5" cy="1024.5" r="35.3995" transform="rotate(-90 5.5 1024.5)" fill="url(#paint3_linear_2064_4866)" stroke="url(#paint4_linear_2064_4866)" strokeWidth="0.201086"/>
+<circle opacity="0.3" cx="1164" cy="1624" r="108.899" transform="rotate(-90 1164 1624)" fill="url(#paint5_linear_2064_4866)" stroke="url(#paint6_linear_2064_4866)" strokeWidth="0.201086"/>
+<circle opacity="0.3" cx="103" cy="115" r="96.8995" transform="rotate(-90 103 115)" fill="url(#paint7_linear_2064_4866)" stroke="url(#paint8_linear_2064_4866)" strokeWidth="0.201086"/>
 </g>
 </g>
 <defs>

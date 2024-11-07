@@ -104,8 +104,6 @@ export function calculateParameters(parameters) {
       throw new Error("[AV]: AV is not defined. Please, fill the parameter.");
     }
 
-    console.log(cutLongNumber((TV - AV) / (Hmax * 1000)))
-
     return cutLongNumber((TV - AV) / (Hmax * 1000));
   }
 
@@ -311,6 +309,8 @@ export function calculateParameters(parameters) {
       result[p.variable_name].value,
       result
     );
+
+    result[p.variable_name].explanation = p.explanation;
   });
 
   return result;

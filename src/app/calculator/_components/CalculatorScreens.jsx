@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Steps, App } from "antd";
+import { Button, Steps, App, Badge, Tooltip } from "antd";
 import { useContext, useRef, useState } from "react";
 import { FillCF } from "./Steps/FillCF";
 import { FillMachine } from "./Steps/FillMachine";
@@ -8,6 +8,8 @@ import { LastStep } from "./Steps/LastStep";
 import { ParametersProvider } from "../ParametersContext";
 import { calculateParameters } from "../_utils";
 import { FillMixer } from "./Steps/FillMixer";
+
+const inputedParamKeys = ["AV", "Hmax", "TV", "S", "RF", "TC", "MC", "H", "R"];
 
 export const CalculatorScreens = () => {
   const [current, setCurrent] = useState(0);
@@ -52,6 +54,14 @@ export const CalculatorScreens = () => {
     }
   };
 
+  const missingParams = parameters.filter((param) => {
+    if (inputedParamKeys.includes(param.variable_name)) {
+      return param.value === null ? true : false;
+    }
+  });
+
+  const isDisabledCalculate = missingParams.length > 1;
+
   const steps = [
     { title: "Fill the machine parameters", content: <FillMachine /> },
     { title: "Fill the CF parameters", content: <FillCF /> },
@@ -85,7 +95,11 @@ export const CalculatorScreens = () => {
             Next
           </Button>
         </div>
-        <Button type="primary" onClick={handleCalculate}>
+        <Button
+          type="primary"
+          disabled={isDisabledCalculate}
+          onClick={handleCalculate}
+        >
           Calculate
         </Button>
       </div>
@@ -98,15 +112,26 @@ export const CalculatorScreens = () => {
               with exactly target concentration with 100% full tank.
             </p>
             <div className="grid grid-flow-col gap-4 my-4">
-              {result.map(({ key, data }) => (
-                <div
-                  key={key}
-                  className="flex flex-col gap-4 bg-[#f3f9ff] overflow-hidden rounded-[20px] shadow-lg"
-                >
-                  <h3 className="bg-blue text-center p-2 font-bold text-gray-100">{key}</h3>
-                  <p className="text-center pb-4">{data.value || 0}</p>
-                </div>
-              ))}
+              {result.map(({ key, data }) => {
+                if (!data.value) return null;
+                return (
+                  <Tooltip
+                    title={data.explanation || "No explanation"}
+                    placement="top"
+                  >
+                    <div
+                      key={key}
+                      className="flex flex-col gap-4 bg-[#f3f9ff] overflow-hidden rounded-[20px] shadow-lg"
+                    >
+                      <h3 className="bg-blue text-center p-2 font-bold text-gray-100">
+                        {key}
+                      </h3>
+
+                      <p className="text-center pb-4">{data.value || 0}</p>
+                    </div>
+                  </Tooltip>
+                );
+              })}
             </div>
           </>
         )}

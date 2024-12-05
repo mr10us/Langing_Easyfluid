@@ -10,7 +10,10 @@ const nextConfig = {
     return config;
   },
   output: "export",
+  images: {
+    unoptimized: true,
+  }
 };
 
-export default withExportImages(nextConfig);
-// export default nextConfig;
+// export default withExportImages(nextConfig);
+export default nextConfig;

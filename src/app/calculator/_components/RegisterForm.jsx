@@ -48,7 +48,9 @@ export const RegisterForm = () => {
       return acc;
     }, {});
 
-  const clientAction = async (formData) => {
+  const clientAction = async (event, formData) => {
+    event.preventDefault();
+
     const userInfo = {
       name: formData.get("nomo"),
       email: formData.get("mailo"),
@@ -88,7 +90,7 @@ export const RegisterForm = () => {
   return (
     <form
       ref={formRef}
-      action={clientAction}
+      onSubmit={(e) => clientAction(e, new FormData(e.currentTarget))}
       className="flex items-center flex-col gap-6 bg-demo-gradient shadow-lg p-4 rounded-md my-6"
     >
       <p className="text-center text-2xl">

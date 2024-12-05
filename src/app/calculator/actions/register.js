@@ -1,5 +1,3 @@
-"use server";
-
 export const registerUser = async (data) => {
   try {
     const response = await fetch(

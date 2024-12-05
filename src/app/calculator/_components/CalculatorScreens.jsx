@@ -10,7 +10,7 @@ import { calculateParameters } from "../_utils";
 import { FillMixer } from "./Steps/FillMixer";
 import { Result } from "./Result";
 import { Underlined } from "./Underlined";
-import { RegistrationPage } from "./RegistrationPage";
+import { RegisterForm } from "./RegisterForm";
 
 const inputedParamKeys = ["AV", "Hmax", "TV", "S", "RF", "TC", "MC", "H", "R"];
 
@@ -118,7 +118,7 @@ export const CalculatorScreens = () => {
               <Underlined>avoid risks</Underlined>.
             </p>
             <Divider type="horizontal" />
-            <RegistrationPage />
+            <RegisterForm />
           </>
         )}
       </div>

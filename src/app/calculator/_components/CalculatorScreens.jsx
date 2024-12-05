@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Steps, App, Badge, Tooltip } from "antd";
+import { Button, Steps, App, Divider } from "antd";
 import { useContext, useRef, useState } from "react";
 import { FillCF } from "./Steps/FillCF";
 import { FillMachine } from "./Steps/FillMachine";
@@ -8,6 +8,9 @@ import { LastStep } from "./Steps/LastStep";
 import { ParametersProvider } from "../ParametersContext";
 import { calculateParameters } from "../_utils";
 import { FillMixer } from "./Steps/FillMixer";
+import { Result } from "./Result";
+import { Underlined } from "./Underlined";
+import { RegistrationPage } from "./RegistrationPage";
 
 const inputedParamKeys = ["AV", "Hmax", "TV", "S", "RF", "TC", "MC", "H", "R"];
 
@@ -107,32 +110,15 @@ export const CalculatorScreens = () => {
       <div className="my-6">
         {!!result && (
           <>
-            <p className="py-4">
-              So, if you proceed with the recommendations above, you will end up
-              with exactly target concentration with 100% full tank.
-            </p>
-            <div className="grid grid-flow-col gap-4 my-4">
-              {result.map(({ key, data }) => {
-                if (!data.value) return null;
-                return (
-                  <Tooltip
-                    title={data.explanation || "No explanation"}
-                    placement="top"
-                  >
-                    <div
-                      key={key}
-                      className="flex flex-col gap-4 bg-[#f3f9ff] overflow-hidden rounded-[20px] shadow-lg"
-                    >
-                      <h3 className="bg-blue text-center p-2 font-bold text-gray-100">
-                        {key}
-                      </h3>
-
-                      <p className="text-center pb-4">{data.value || 0}</p>
-                    </div>
-                  </Tooltip>
-                );
-              })}
+            <div className="my-8">
+              <Result resultParams={result} />
             </div>
+            <p className="text-lg">
+              In other words, you <Underlined>save costs</Underlined> and{" "}
+              <Underlined>avoid risks</Underlined>.
+            </p>
+            <Divider type="horizontal" />
+            <RegistrationPage />
           </>
         )}
       </div>
